@@ -1,0 +1,46 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pacifico&family=Quicksand:wght@300..700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+    font-size: $font-size;
+    overflow-y: scroll;
+}
+
+body {
+    font-family: $font-family-main;
+    font-size: 1rem;
+    color: $color-font-primary;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    padding-top: 70px;
+    background-color: $color-main;
+
+    .container-xl {
+        max-width: $xl;
+        margin-inline: auto;
+    }
+}

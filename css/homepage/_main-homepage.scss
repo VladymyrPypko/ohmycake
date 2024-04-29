@@ -1,0 +1,167 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.main-homepage {
+    background-image: url(../src/images/homepage/BackgroundLight.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: $color-primary;
+
+    .about {
+        padding-block: 50px 10px;
+
+        .container-xl {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &__title {
+            font-family: $font-family-secondary;
+            font-weight: 400;
+            color: $color-font-secondary;
+            margin-bottom: 20px;
+        }
+
+        &__box {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        &__item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &__logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: $color-main;
+            border-radius: 50%;
+            box-shadow: inset 0px 0px 10px $color-dark-secondary;
+        }
+
+        &__image {
+            display: inline-block;
+            width: 30px;
+        }
+        
+        &__info {
+            max-width: 7ch;
+            font-size: 0.9rem;
+            line-height: 25px;
+        }
+    }
+
+    .empty {
+        height: 500px;
+        background-image: url('../src/images/homepage/Background.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-color: $color-main;
+    }
+
+    .top-products {
+        padding-top: 70px;
+        background-image: url('../src/images/homepage/BackgroundLight.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-color: $color-primary;
+
+        .container-xl {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__title {
+            font-family: $font-family-secondary;
+            font-size: 2rem;
+            font-weight: 400;
+            color: $color-font-secondary;
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            margin: 30px auto;
+        }
+        
+        &__image {
+            display: inline-block;
+            justify-self: center;
+            width: 70%;
+        }
+        
+        &__info {
+            font-size: 0.9rem;
+            line-height: 20px;
+        }
+
+        &__buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+
+            & button {
+                width: 70px;
+                height: 40px;
+                border: 1px solid $color-dark-secondary;
+                border-radius: 40px;
+                background-color: $color-primary;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                box-shadow: inset 0px 0px 4px $color-dark-secondary;
+            }
+
+            .active {
+                background-color: $color-main;
+            }
+
+            #DevilsFood {
+                background-image: url('../src/images/homepage/main/products/DevilsFood.png');
+            }
+
+            #MangoPeach {
+                background-image: url('../src/images/homepage/main/products/MangoPeach.png');
+            }
+
+            #BlueberryCheese {
+                background-image: url('../src/images/homepage/main/products/BlueberryCheese.png');
+            }
+
+            #BrazoSansrival {
+                background-image: url('../src/images/homepage/main/products/BrazoSansrival.png');
+            }
+
+            #CappuccinoChoco {
+                background-image: url('../src/images/homepage/main/products/CappuccinoChoco.png');
+            }
+
+            #ChocoSansrival {
+                background-image: url('../src/images/homepage/main/products/ChocoSansrival.png');
+            }
+
+            #HersheysKisses {
+                background-image: url('../src/images/homepage/main/products/HersheysKisses.png');
+            }
+
+            #MangoSymphony {
+                background-image: url('../src/images/homepage/main/products/MangoSymphony.png');
+            }
+        }
+    }
+}

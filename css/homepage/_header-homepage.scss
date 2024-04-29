@@ -1,0 +1,229 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.header-homepage {
+    background-image: url(../src/images/homepage/Background.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    .hero {
+
+        &__title {
+            display: none;
+            align-items: center;
+            justify-content: flex-start;
+            font-family: $font-family-secondary;
+            font-size: 2rem;
+            color: $color-font-secondary;
+        }
+
+        .slider {
+            display: flex;
+            flex-direction: column;
+            margin-block: 50px 0px;
+            padding-block: 50px 0px;
+
+            &__title {
+                display: flex;
+                align-self: center;
+                align-items: center;
+                flex-direction: column;
+                font-family: $font-family-secondary;
+                font-weight: 400;
+            }
+
+            &__box {
+                display: flex;
+                width: 270px;
+                height: 270px;
+                margin: 0 auto;
+                text-align: center;
+                overflow: hidden;
+            }
+
+            &__item {
+                position: absolute;
+                opacity: 0;
+                padding: 10px;
+                transition: all .6s;
+            }
+
+            .current {
+                opacity: 1;
+                z-index: 2;
+            }
+
+            &__item-image {
+                width: 250px;
+                height: 200px;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+
+                &--first {
+                    background-image: url('../src/images/homepage/header/MangoPeachTiramisuWhole.png');
+                }
+
+                &--second {
+                    background-image: url('../src/images/homepage/header/RedVelvetCheesecakeWhole.png');
+                }
+
+                &--third {
+                    background-image: url('../src/images/homepage/header/DevilsFoodCheesecakeWhole.png');
+                }
+            }
+
+            &__item:focus-visible,
+            &__item:hover {
+                .slider__item-image--first {
+                    background-image: url('../src/images/homepage/header/MangoPeachTiramisuSliced.png');
+                }
+                .slider__item-image--second {
+                    background-image: url('../src/images/homepage/header/RedVelvetCheesecakeSliced.png');
+                }
+                .slider__item-image--third {
+                    background-image: url('../src/images/homepage/header/DevilsFoodCheesecakeSliced.png');
+                }
+            } 
+
+            &__item-link {
+                display: inline-block;
+                font-size: 0.7rem;
+                margin-top: 20px;
+                color: $color-font-primary;
+            }
+
+            &__buttons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &__prev,
+            &__next {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 10px;
+                padding: 10px;
+                border-radius: 50%;
+                font-size: 1.4rem;
+                color: $color-font-secondary;
+                background-color: transparent;
+                cursor: pointer;
+                transition: all .6s;
+            }
+
+            &__prev:focus-visible,
+            &__prev:hover,
+            &__next:focus-visible,
+            &__next:hover {
+                background-color: $color-font-primary;
+                color: $color-main;
+            }
+
+            &__prev:active,
+            &__next:active {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    @include md {
+        margin-top: 50px;
+
+        .hero {
+            display: block;
+            padding-block: 15px;
+
+            .container-xl {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+    
+            &__title {
+                display: flex;
+                align-self: flex-start;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                width: 300px;
+                margin-top: 100px;
+                font-family: $font-family-secondary;
+                font-size: 2rem;
+                color: $color-font-secondary;
+
+                &--secondary {
+                    margin-left: auto;
+                    max-width: 20ch;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    flex-basis: 100%;
+                }
+            }
+    
+            .slider {
+                &__title {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include xl {
+        margin-top: 0px;
+
+        .hero {
+            .container-xl {
+                padding-top: 100px;
+            }
+
+            &__title {
+                align-items: baseline;
+                justify-content: unset;
+                width: 500px;
+                margin-top: 150px;
+                font-size: 4.5rem;
+                font-weight: 400;
+
+                &--secondary {
+                    margin-left: 0px;
+                    font-size: 1.7rem;
+                }
+            }
+    
+            .slider {
+                margin-block: 50px 0px;
+                padding-block: 50px 0px;
+
+                &__title {
+                    display: none;
+                }
+    
+                &__box {
+                    width: 370px;
+                    height: 370px;
+                }
+
+                &__item-title {
+                    font-size: 1.5rem;
+                }
+    
+                &__item-image {
+                    width: 350px;
+                    height: 300px;
+                }
+    
+                &__item-link {
+                    font-size: 0.9rem;
+                }
+    
+                &__buttons {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
