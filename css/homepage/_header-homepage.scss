@@ -92,6 +92,11 @@
                 font-size: 0.7rem;
                 margin-top: 20px;
                 color: $color-font-primary;
+
+                &:focus-visible,
+                &:hover {
+                    opacity: 0.7;
+                }
             }
 
             &__buttons {

@@ -279,6 +279,9 @@ a {
   margin-top: 20px;
   color: #9c6644;
 }
+.header-homepage .hero .slider__item-link:focus-visible, .header-homepage .hero .slider__item-link:hover {
+  opacity: 0.7;
+}
 .header-homepage .hero .slider__buttons {
   display: flex;
   align-items: center;
@@ -392,7 +395,7 @@ a {
   background-color: #E6CCB2;
 }
 .main-homepage .about {
-  padding-block: 50px 10px;
+  padding-block: 70px 10px;
 }
 .main-homepage .about .container-xl {
   display: flex;
@@ -435,16 +438,62 @@ a {
   font-size: 0.9rem;
   line-height: 25px;
 }
-.main-homepage .empty {
-  height: 500px;
+.main-homepage .workflow {
+  padding-block: 70px 10px;
   background-image: url("../src/images/homepage/Background.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
   background-color: #EDE0D4;
 }
+.main-homepage .workflow .container-xl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-homepage .workflow__box {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+.main-homepage .workflow__item {
+  display: grid;
+  grid-template-rows: 50px 20px 1fr;
+  justify-items: center;
+  gap: 5px;
+  padding: 10px;
+  border: 1px solid #E6CCB2;
+}
+.main-homepage .workflow__numbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #E6CCB2;
+  box-shadow: 0px 0px 10px #9c6644;
+}
+.main-homepage .workflow__num {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #7F5539;
+}
+.main-homepage .workflow__text--primary {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #7F5539;
+}
+.main-homepage .workflow__text--secondary {
+  font-size: 0.8rem;
+  width: 15ch;
+}
 .main-homepage .top-products {
-  padding-top: 70px;
+  padding-block: 70px 10px;
   background-image: url("../src/images/homepage/BackgroundLight.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -476,8 +525,9 @@ a {
   width: 70%;
 }
 .main-homepage .top-products__info {
+  min-height: 120px;
   font-size: 0.9rem;
-  line-height: 20px;
+  line-height: 1.5rem;
 }
 .main-homepage .top-products__buttons {
   display: grid;
