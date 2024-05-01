@@ -72,7 +72,7 @@ a {
   flex-direction: column;
   margin-block: auto 10px;
   font-size: 0.6rem;
-  color: #B08968;
+  color: #b08968;
 }
 .navbar__item:last-of-type .navbar__row--mod {
   font-family: "Pacifico", cursive;
@@ -427,7 +427,7 @@ a {
   padding: 10px;
   background-color: #EDE0D4;
   border-radius: 50%;
-  box-shadow: inset 0px 0px 10px #B08968;
+  box-shadow: inset 0px 0px 10px #b08968;
 }
 .main-homepage .about__image {
   display: inline-block;
@@ -537,13 +537,13 @@ a {
 .main-homepage .top-products__buttons button {
   width: 70px;
   height: 40px;
-  border: 1px solid #B08968;
+  border: 1px solid #b08968;
   border-radius: 40px;
   background-color: #E6CCB2;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  box-shadow: inset 0px 0px 4px #B08968;
+  box-shadow: inset 0px 0px 4px #b08968;
 }
 .main-homepage .top-products__buttons .active {
   background-color: #EDE0D4;
@@ -571,4 +571,76 @@ a {
 }
 .main-homepage .top-products__buttons #MangoSymphony {
   background-image: url("../src/images/homepage/main/products/MangoSymphony.png");
+}
+.main-homepage .discount {
+  padding-block: 70px 10px;
+  background-image: url("../src/images/homepage/Background.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: #FE9BA0;
+  color: #7F5539;
+}
+.main-homepage .discount .container-xl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.main-homepage .discount__title {
+  text-align: center;
+  text-shadow: 1px 1px 2px #9c6644;
+  font-family: "Pacifico", cursive;
+  font-size: 2rem;
+  font-weight: 200;
+  color: #EDE0D4;
+}
+.main-homepage .discount__description, .main-homepage .discount__info {
+  max-width: 25ch;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px #EDE0D4;
+}
+.main-homepage .discount__gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  box-shadow: inset 0px 0px 10px #FE9BA0;
+}
+.main-homepage .discount__cake {
+  width: 40px;
+}
+.main-homepage .discount__bonus {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-image: url(../src/images/homepage/main/discount/MiniT-Overload.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.main-homepage .discount__countdown {
+  text-shadow: 1px 1px 2px #EDE0D4;
+  font-weight: 700;
+  color: #7F5539;
+}
+.main-homepage .discount__link {
+  padding: 5px 10px;
+  border: 1px solid #7F5539;
+  border-radius: 30px;
+  box-shadow: 1px 1px 5px #9c6644;
+  background-color: #EDE0D4;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 20px;
+  letter-spacing: 2px;
+  color: #7F5539;
+}
+.main-homepage .discount__link:focus-visible, .main-homepage .discount__link:hover {
+  background-color: #9c6644;
+  color: #EDE0D4;
+  text-shadow: 1px 1px #7F5539;
 }/*# sourceMappingURL=style.css.map */

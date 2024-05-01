@@ -218,4 +218,88 @@
             }
         }
     }
+
+    .discount {
+        padding-block: 70px 10px;
+        background-image: url('../src/images/homepage/Background.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-color: $color-special;
+        color: $color-font-secondary;
+
+        .container-xl {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        &__title {
+            text-align: center;
+            text-shadow: 1px 1px 2px $color-font-primary;
+            font-family: $font-family-secondary;
+            font-size: 2rem;
+            font-weight: 200;
+            color: $color-main;
+            
+        }
+        
+        &__description, &__info {
+            max-width: 25ch;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px $color-main;
+        }
+        
+        &__gallery {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            box-shadow: inset 0px 0px 10px $color-special;
+        }
+
+        &__cake {
+            width: 40px;
+        }
+
+        &__bonus {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-image: url(../src/images/homepage/main/discount/MiniT-Overload.png);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &__countdown {
+            text-shadow: 1px 1px 2px $color-main;
+            font-weight: 700;
+            color: $color-font-secondary;
+        }
+
+        &__link {
+            padding: 5px 10px;
+            border: 1px solid $color-font-secondary;
+            border-radius: 30px;
+            box-shadow: 1px 1px 5px $color-font-primary;
+            background-color: $color-main;
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 20px;
+            letter-spacing: 2px;
+            color: $color-font-secondary;
+
+            &:focus-visible,
+            &:hover {
+                background-color: $color-font-primary;
+                color: $color-main;
+                text-shadow: 1px 1px $color-font-secondary;
+            }
+        }
+    }
 }

@@ -102,3 +102,30 @@ document.querySelector('.top-products__buttons').addEventListener('click', (e) =
         break;
   }
 });
+
+// homepage/main/discount
+const countdownDate = new Date("May 31, 2024 24:00:00").getTime(); // дата и время до когда у нас действует акция
+
+const x = setInterval(function() { // функция с интервалом 1000ms = 1s для отсчета секунд
+
+  const now = new Date().getTime(); // текущая дата
+  const difference = countdownDate - now; // разница: дата окончания акции - текущая дата юзера
+
+  let days = Math.floor(difference / (1000 * 60 * 60 * 24)); // дни
+  
+  let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // часы
+  hours = (hours < 10) ? "0" + hours : hours; // вывод часов в формате хх
+
+  let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)); // минуты
+  minutes = (minutes < 10) ? "0" + minutes : minutes; // вывод минут в формате хх
+
+  let seconds = Math.floor((difference % (1000 * 60)) / 1000); // секунды
+  seconds = (seconds < 10) ? "0" + seconds : seconds; // вывод секунд в формате хх
+
+  document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+  if (difference < 0) { // проверка на разницу в датах
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "EXPIRED";
+  }
+}, 1000);
