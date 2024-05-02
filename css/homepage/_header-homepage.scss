@@ -6,23 +6,22 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
+    background-color: $color-special;
 
     .hero {
 
         &__title {
             display: none;
-            align-items: center;
-            justify-content: flex-start;
             font-family: $font-family-secondary;
-            font-size: 2rem;
-            color: $color-font-secondary;
+            color: $color-main;
+            text-shadow: 1px 1px 2px $color-font-secondary;
         }
 
         .slider {
             display: flex;
             flex-direction: column;
             margin-block: 50px 0px;
-            padding-block: 50px 0px;
+            padding-block: 100px 0px;
 
             &__title {
                 display: flex;
@@ -31,6 +30,8 @@
                 flex-direction: column;
                 font-family: $font-family-secondary;
                 font-weight: 400;
+                color: $color-main;
+                text-shadow: 1px 1px 2px $color-font-secondary;
             }
 
             &__box {
@@ -85,13 +86,20 @@
                 .slider__item-image--third {
                     background-image: url('../src/images/homepage/header/DevilsFoodCheesecakeSliced.png');
                 }
-            } 
+            }
+
+            &__item-title {
+                color: $color-main;
+                text-shadow: 1px 1px 2px $color-font-secondary;
+            }
 
             &__item-link {
                 display: inline-block;
-                font-size: 0.7rem;
                 margin-top: 20px;
-                color: $color-font-primary;
+                font-size: 0.7rem;
+                letter-spacing: 1px;
+                color: $color-font-secondary;
+                text-shadow: 1px 1px 1px $color-main;
 
                 &:focus-visible,
                 &:hover {
@@ -114,18 +122,18 @@
                 padding: 10px;
                 border-radius: 50%;
                 font-size: 1.4rem;
-                color: $color-font-secondary;
+                color: $color-main;
+                text-shadow: 0px 0px 3px $color-font-secondary;
                 background-color: transparent;
-                cursor: pointer;
                 transition: all .6s;
+                cursor: pointer;
             }
 
             &__prev:focus-visible,
             &__prev:hover,
             &__next:focus-visible,
             &__next:hover {
-                background-color: $color-font-primary;
-                color: $color-main;
+                background-color: rgb(255, 255, 255, 0.1);
             }
 
             &__prev:active,
@@ -140,7 +148,7 @@
 
         .hero {
             display: block;
-            padding-block: 15px;
+            padding-block: 70px 10px;
 
             .container-xl {
                 display: flex;
@@ -155,9 +163,7 @@
                 flex-wrap: wrap;
                 width: 300px;
                 margin-top: 100px;
-                font-family: $font-family-secondary;
                 font-size: 2rem;
-                color: $color-font-secondary;
 
                 &--secondary {
                     margin-left: auto;
@@ -176,7 +182,7 @@
         }
     }
 
-    @include xl {
+    @include lg {
         margin-top: 0px;
 
         .hero {
