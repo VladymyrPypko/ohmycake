@@ -1,2 +1,67 @@
 @use "../presets" as *;
 @use "../mixins" as *;
+
+.cake {
+  margin: 4vw;
+  border: 1px solid $color-dark-secondary;
+  padding: 3vw;
+
+  &__images-wrap {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__preview,
+  &__filling {
+    opacity: 0;
+    position: relative;
+    min-width: 100%;
+    margin-bottom: 2vw;
+    transition: all 0.18s linear;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &__filling {
+    left: -100%;
+  }
+
+  &__info-wrap {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  &__name {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &__price {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  &__control {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 2vw;
+  }
+
+  &__add-to-cart,
+  &__full-info {
+    padding: 1vw;
+    font-size: 2rem;
+    border-radius: 1vw;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $color-secondary;
+    }
+  }
+}

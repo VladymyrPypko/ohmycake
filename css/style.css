@@ -155,9 +155,7 @@ a {
     top: 0;
     left: 0;
     flex-direction: row;
-    width: -moz-fit-content;
     width: fit-content;
-    height: -moz-fit-content;
     height: fit-content;
     margin-top: 0px;
     background-color: #DDB892;
@@ -643,4 +641,59 @@ a {
   background-color: #9c6644;
   color: #EDE0D4;
   text-shadow: 1px 1px #7F5539;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.cake {
+  margin: 4vw;
+  border: 1px solid #b08968;
+  padding: 3vw;
+}
+.cake__images-wrap {
+  display: flex;
+  overflow: hidden;
+}
+.cake__preview, .cake__filling {
+  opacity: 0;
+  position: relative;
+  min-width: 100%;
+  margin-bottom: 2vw;
+  transition: all 0.18s linear;
+}
+.cake__preview.active, .cake__filling.active {
+  opacity: 1;
+}
+.cake__filling {
+  left: -100%;
+}
+.cake__info-wrap {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+}
+.cake__name {
+  grid-column: 1;
+  grid-row: 1;
+}
+.cake__price {
+  grid-column: 1;
+  grid-row: 2;
+}
+.cake__control {
+  grid-column: 2;
+  grid-row: 1/span 2;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 2vw;
+}
+.cake__add-to-cart, .cake__full-info {
+  padding: 1vw;
+  font-size: 2rem;
+  border-radius: 1vw;
+}
+.cake__add-to-cart:hover, .cake__full-info:hover {
+  cursor: pointer;
+  background-color: #DDB892;
+}
+
+/*# sourceMappingURL=style.css.map */
