@@ -31,7 +31,12 @@
   &__info-wrap {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 20px) 0fr;
+    transition: all 0.18s linear;
+
+    &.show {
+      grid-template-rows: repeat(2, 20px) 1fr;
+    }
   }
 
   &__name {
@@ -49,19 +54,28 @@
     grid-row: 1 / span 2;
     display: flex;
     justify-content: end;
-    align-items: center;
-    gap: 2vw;
+    gap: 3vw;
   }
 
   &__add-to-cart,
   &__full-info {
-    padding: 1vw;
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
     border-radius: 1vw;
+    padding-inline: 1vw;
+    color: $color-font-primary;
+    font-size: 2rem;
 
     &:hover {
       cursor: pointer;
-      background-color: $color-secondary;
+      background-color: $color-font-secondary;
+      color: $color-main;
     }
+  }
+
+  &__description {
+    grid-column: 1 / span 2;
+    overflow: hidden;
+    padding-top: 2vw;
   }
 }

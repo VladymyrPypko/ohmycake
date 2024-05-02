@@ -668,7 +668,11 @@ a {
 .cake__info-wrap {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 20px) 0fr;
+  transition: all 0.18s linear;
+}
+.cake__info-wrap.show {
+  grid-template-rows: repeat(2, 20px) 1fr;
 }
 .cake__name {
   grid-column: 1;
@@ -683,17 +687,25 @@ a {
   grid-row: 1/span 2;
   display: flex;
   justify-content: end;
-  align-items: center;
-  gap: 2vw;
+  gap: 3vw;
 }
 .cake__add-to-cart, .cake__full-info {
-  padding: 1vw;
-  font-size: 2rem;
+  display: flex;
+  align-items: center;
   border-radius: 1vw;
+  padding-inline: 1vw;
+  color: #9c6644;
+  font-size: 2rem;
 }
 .cake__add-to-cart:hover, .cake__full-info:hover {
   cursor: pointer;
-  background-color: #DDB892;
+  background-color: #7F5539;
+  color: #EDE0D4;
+}
+.cake__description {
+  grid-column: 1/span 2;
+  overflow: hidden;
+  padding-top: 2vw;
 }
 
 /*# sourceMappingURL=style.css.map */

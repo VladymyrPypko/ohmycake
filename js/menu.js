@@ -14,21 +14,35 @@ fetch('../src/json/database.json')
                         <img class="cake__filling" src="${cake.filling['590']}" alt="cake-filling">
                     </div>
                     <div class="cake__info-wrap">
-                        <h5 class="cake__name">${cake.name}</h5>
+                        <h4 class="cake__name">${cake.name}</h4>
                         <span class="cake__price">${cake.price} &#8372;</span>
                         <div class="cake__control">
-                            <i class='cake__add-to-cart bx bx-cart-add bx-flip-horizontal'></i>        
-                            <i class='cake__full-info bx bx-detail bx-flip-horizontal' ></i>       
+                            <a href="#" class="cake__full-info bx bx-detail"></a>
+                            <a href="#" class="cake__add-to-cart bx bx-cart-alt"></a>
                         </div>
+                        <p class="cake__description">${cake.description}</p>
                     </div>
                 </li>`
             )
         })
 
+        // image switcher
         menu.addEventListener('click', (e) => {
-            if (e.target.tagName !== 'IMG') return;
+            if (!['IMG', 'A'].includes(e.target.tagName)) return;
 
-            e.target.parentElement.querySelectorAll('img')
-                .forEach(elem => elem.classList.toggle('active'));
+            e.preventDefault();
+
+            const target = e.target;
+            const klassList = target.classList;
+            const cakeCard = e.composedPath().find(elem => elem.classList.contains('cake'));
+
+            console.log(cakeCard)
+
+            if (klassList.contains('cake__preview') || klassList.contains('cake__filling')) {
+                cakeCard.querySelectorAll('img').forEach(elem => elem.classList.toggle('active'));
+            } else if (klassList.contains('cake__full-info')) {
+                cakeCard.querySelector('.cake__info-wrap')
+                    .classList.toggle('show');
+            }
         })
     })
