@@ -43,6 +43,8 @@ fetch('../src/json/database.json')
             } else if (klassList.contains('cake__full-info')) {
                 cakeCard.querySelector('.cake__info-wrap')
                     .classList.toggle('show');
+                cakeCard.querySelector('.cake__info-wrap .cake__description')
+                    .classList.toggle('shown');
             }
         })
     })

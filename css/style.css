@@ -644,9 +644,12 @@ a {
 }
 
 .cake {
-  margin: 4vw;
   border: 1px solid #b08968;
-  padding: 3vw;
+  margin: 4vw;
+  padding: 3vw 3vw 0;
+}
+.cake:first-child {
+  margin-top: 2vw;
 }
 .cake__images-wrap {
   display: flex;
@@ -668,11 +671,12 @@ a {
 .cake__info-wrap {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(2, 20px) 0fr;
+  grid-template-rows: repeat(2, 20px) 3vw 0fr;
   transition: all 0.18s linear;
 }
 .cake__info-wrap.show {
-  grid-template-rows: repeat(2, 20px) 1fr;
+  grid-template-rows: repeat(2, 20px) 3vw 1fr;
+  margin-bottom: 3vw;
 }
 .cake__name {
   grid-column: 1;
@@ -693,7 +697,7 @@ a {
   display: flex;
   align-items: center;
   border-radius: 1vw;
-  padding-inline: 1vw;
+  padding-inline: 1.2vw;
   color: #9c6644;
   font-size: 2rem;
 }
@@ -703,9 +707,10 @@ a {
   color: #EDE0D4;
 }
 .cake__description {
+  position: relative;
   grid-column: 1/span 2;
-  overflow: hidden;
-  padding-top: 2vw;
+  grid-row: 4;
+  overflow-y: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

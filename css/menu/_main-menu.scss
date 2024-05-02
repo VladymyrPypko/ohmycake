@@ -1,10 +1,17 @@
 @use "../presets" as *;
 @use "../mixins" as *;
 
+.main-menu {
+}
+
 .cake {
-  margin: 4vw;
   border: 1px solid $color-dark-secondary;
-  padding: 3vw;
+  margin: 4vw;
+  padding: 3vw 3vw 0;
+
+  &:first-child {
+    margin-top: 2vw;
+  }
 
   &__images-wrap {
     display: flex;
@@ -31,11 +38,12 @@
   &__info-wrap {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(2, 20px) 0fr;
+    grid-template-rows: repeat(2, 20px) 3vw 0fr;
     transition: all 0.18s linear;
 
     &.show {
-      grid-template-rows: repeat(2, 20px) 1fr;
+      grid-template-rows: repeat(2, 20px) 3vw 1fr;
+      margin-bottom: 3vw;
     }
   }
 
@@ -62,7 +70,7 @@
     display: flex;
     align-items: center;
     border-radius: 1vw;
-    padding-inline: 1vw;
+    padding-inline: 1.2vw;
     color: $color-font-primary;
     font-size: 2rem;
 
@@ -74,8 +82,9 @@
   }
 
   &__description {
+    position: relative;
     grid-column: 1 / span 2;
-    overflow: hidden;
-    padding-top: 2vw;
+    grid-row: 4;
+    overflow-y: hidden;
   }
 }
