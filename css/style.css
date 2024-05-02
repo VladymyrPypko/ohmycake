@@ -82,7 +82,7 @@ a {
   padding: 10px;
   font-size: 14px;
   font-weight: 500;
-  color: #7F5539;
+  color: #7f5539;
   transition: all 0.6s;
 }
 .navbar__link:focus-visible, .navbar__link:hover {
@@ -107,7 +107,7 @@ a {
   width: 90%;
   height: 3px;
   transition: all 0.4s;
-  background-color: #7F5539;
+  background-color: #7f5539;
 }
 .navbar .navbar-toggle::before {
   content: "";
@@ -207,20 +207,19 @@ a {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
+  background-color: #e9a59c;
 }
 .header-homepage .hero__title {
   display: none;
-  align-items: center;
-  justify-content: flex-start;
   font-family: "Pacifico", cursive;
-  font-size: 2rem;
-  color: #7F5539;
+  color: #EDE0D4;
+  text-shadow: 1px 1px 2px #7f5539;
 }
 .header-homepage .hero .slider {
   display: flex;
   flex-direction: column;
   margin-block: 50px 0px;
-  padding-block: 50px 0px;
+  padding-block: 100px 0px;
 }
 .header-homepage .hero .slider__title {
   display: flex;
@@ -229,6 +228,8 @@ a {
   flex-direction: column;
   font-family: "Pacifico", cursive;
   font-weight: 400;
+  color: #EDE0D4;
+  text-shadow: 1px 1px 2px #7f5539;
 }
 .header-homepage .hero .slider__box {
   display: flex;
@@ -273,11 +274,17 @@ a {
 .header-homepage .hero .slider__item:focus-visible .slider__item-image--third, .header-homepage .hero .slider__item:hover .slider__item-image--third {
   background-image: url("../src/images/homepage/header/DevilsFoodCheesecakeSliced.png");
 }
+.header-homepage .hero .slider__item-title {
+  color: #EDE0D4;
+  text-shadow: 1px 1px 2px #7f5539;
+}
 .header-homepage .hero .slider__item-link {
   display: inline-block;
-  font-size: 0.7rem;
   margin-top: 20px;
-  color: #9c6644;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: #7f5539;
+  text-shadow: 1px 1px 1px #EDE0D4;
 }
 .header-homepage .hero .slider__item-link:focus-visible, .header-homepage .hero .slider__item-link:hover {
   opacity: 0.7;
@@ -295,14 +302,14 @@ a {
   padding: 10px;
   border-radius: 50%;
   font-size: 1.4rem;
-  color: #7F5539;
+  color: #EDE0D4;
+  text-shadow: 0px 0px 3px #7f5539;
   background-color: transparent;
-  cursor: pointer;
   transition: all 0.6s;
+  cursor: pointer;
 }
 .header-homepage .hero .slider__prev:focus-visible, .header-homepage .hero .slider__prev:hover, .header-homepage .hero .slider__next:focus-visible, .header-homepage .hero .slider__next:hover {
-  background-color: #9c6644;
-  color: #EDE0D4;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .header-homepage .hero .slider__prev:active, .header-homepage .hero .slider__next:active {
   opacity: 0.7;
@@ -313,7 +320,7 @@ a {
   }
   .header-homepage .hero {
     display: block;
-    padding-block: 15px;
+    padding-block: 70px 10px;
   }
   .header-homepage .hero .container-xl {
     display: flex;
@@ -327,9 +334,7 @@ a {
     flex-wrap: wrap;
     width: 300px;
     margin-top: 100px;
-    font-family: "Pacifico", cursive;
     font-size: 2rem;
-    color: #7F5539;
   }
   .header-homepage .hero__title--secondary {
     margin-left: auto;
@@ -342,7 +347,7 @@ a {
     display: none;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .header-homepage {
     margin-top: 0px;
   }
@@ -387,15 +392,18 @@ a {
   }
 }
 
-.main-homepage {
-  background-image: url(../src/images/homepage/BackgroundLight.png);
+.main-homepage .about,
+.main-homepage .workflow,
+.main-homepage .top-products,
+.main-homepage .discount {
+  padding-block: 70px 10px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
-  background-color: #E6CCB2;
 }
 .main-homepage .about {
-  padding-block: 70px 10px;
+  background-image: url("../src/images/homepage/BackgroundSpecial.png");
+  background-color: #E6CCB2;
 }
 .main-homepage .about .container-xl {
   display: flex;
@@ -406,7 +414,7 @@ a {
 .main-homepage .about__title {
   font-family: "Pacifico", cursive;
   font-weight: 400;
-  color: #7F5539;
+  color: #7f5539;
   margin-bottom: 20px;
 }
 .main-homepage .about__box {
@@ -439,11 +447,7 @@ a {
   line-height: 25px;
 }
 .main-homepage .workflow {
-  padding-block: 70px 10px;
   background-image: url("../src/images/homepage/Background.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top;
   background-color: #EDE0D4;
 }
 .main-homepage .workflow .container-xl {
@@ -451,6 +455,13 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.main-homepage .workflow__title {
+  margin-bottom: 20px;
+  font-family: "Pacifico", cursive;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #7f5539;
 }
 .main-homepage .workflow__box {
   display: grid;
@@ -481,23 +492,19 @@ a {
 .main-homepage .workflow__num {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #7F5539;
+  color: #7f5539;
 }
 .main-homepage .workflow__text--primary {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #7F5539;
+  color: #7f5539;
 }
 .main-homepage .workflow__text--secondary {
   font-size: 0.8rem;
   width: 15ch;
 }
 .main-homepage .top-products {
-  padding-block: 70px 10px;
   background-image: url("../src/images/homepage/BackgroundLight.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top;
   background-color: #E6CCB2;
 }
 .main-homepage .top-products .container-xl {
@@ -510,7 +517,7 @@ a {
   font-family: "Pacifico", cursive;
   font-size: 2rem;
   font-weight: 400;
-  color: #7F5539;
+  color: #7f5539;
 }
 .main-homepage .top-products__container {
   display: flex;
@@ -573,13 +580,9 @@ a {
   background-image: url("../src/images/homepage/main/products/MangoSymphony.png");
 }
 .main-homepage .discount {
-  padding-block: 70px 10px;
   background-image: url("../src/images/homepage/Background.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-color: #FE9BA0;
-  color: #7F5539;
+  background-color: #e9a59c;
+  color: #7f5539;
 }
 .main-homepage .discount .container-xl {
   display: flex;
@@ -590,10 +593,10 @@ a {
 }
 .main-homepage .discount__title {
   text-align: center;
-  text-shadow: 1px 1px 2px #9c6644;
   font-family: "Pacifico", cursive;
   font-size: 2rem;
   font-weight: 200;
+  text-shadow: 1px 1px 2px #9c6644;
   color: #EDE0D4;
 }
 .main-homepage .discount__description, .main-homepage .discount__info {
@@ -608,7 +611,6 @@ a {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  box-shadow: inset 0px 0px 10px #FE9BA0;
 }
 .main-homepage .discount__cake {
   width: 40px;
@@ -617,7 +619,7 @@ a {
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-image: url(../src/images/homepage/main/discount/MiniT-Overload.png);
+  background-image: url("../src/images/homepage/main/discount/MiniT-Overload.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -625,11 +627,11 @@ a {
 .main-homepage .discount__countdown {
   text-shadow: 1px 1px 2px #EDE0D4;
   font-weight: 700;
-  color: #7F5539;
+  color: #7f5539;
 }
 .main-homepage .discount__link {
   padding: 5px 10px;
-  border: 1px solid #7F5539;
+  border: 1px solid #7f5539;
   border-radius: 30px;
   box-shadow: 1px 1px 5px #9c6644;
   background-color: #EDE0D4;
@@ -637,10 +639,156 @@ a {
   text-transform: uppercase;
   line-height: 20px;
   letter-spacing: 2px;
-  color: #7F5539;
+  color: #7f5539;
 }
 .main-homepage .discount__link:focus-visible, .main-homepage .discount__link:hover {
   background-color: #9c6644;
   color: #EDE0D4;
-  text-shadow: 1px 1px #7F5539;
+  text-shadow: 1px 1px #7f5539;
+}
+@media (min-width: 480px) {
+  .main-homepage .about,
+  .main-homepage .workflow,
+  .main-homepage .top-products,
+  .main-homepage .discount {
+    padding-block: 100px 10px;
+  }
+}
+@media (min-width: 768px) {
+  .main-homepage .about,
+  .main-homepage .workflow,
+  .main-homepage .top-products,
+  .main-homepage .discount {
+    padding-block: 140px 10px;
+  }
+  .main-homepage .about__title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  .main-homepage .about__box {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .main-homepage .about__item {
+    gap: 20px;
+  }
+  .main-homepage .about__info {
+    font-size: 1rem;
+  }
+  .main-homepage .workflow__title {
+    margin-bottom: 40px;
+    font-size: 2rem;
+  }
+  .main-homepage .workflow__box {
+    gap: 20px;
+  }
+  .main-homepage .workflow__item {
+    gap: 10px;
+    padding: 15px;
+  }
+  .main-homepage .workflow__text--primary {
+    font-size: 1rem;
+  }
+  .main-homepage .workflow__text--secondary {
+    font-size: 0.9rem;
+  }
+  .main-homepage .top-products__container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+  }
+  .main-homepage .top-products__image {
+    width: 275px;
+  }
+  .main-homepage .top-products__info {
+    font-size: 1rem;
+    max-width: 45ch;
+  }
+  .main-homepage .discount__description, .main-homepage .discount__info {
+    font-size: 1rem;
+  }
+  .main-homepage .discount__gallery {
+    gap: 10px;
+  }
+  .main-homepage .discount__cake {
+    width: 75px;
+  }
+  .main-homepage .discount__bonus {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (min-width: 992px) {
+  .main-homepage .about,
+  .main-homepage .workflow,
+  .main-homepage .top-products,
+  .main-homepage .discount {
+    padding-block: 150px 10px;
+  }
+  .main-homepage .about__title {
+    font-size: 3rem;
+  }
+  .main-homepage .about__box {
+    -moz-column-gap: 100px;
+         column-gap: 100px;
+  }
+  .main-homepage .about__logo {
+    padding: 25px;
+  }
+  .main-homepage .about__image {
+    width: 50px;
+  }
+  .main-homepage .about__info {
+    font-size: 1.2rem;
+  }
+  .main-homepage .workflow__title {
+    font-size: 3rem;
+  }
+  .main-homepage .workflow__box {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .main-homepage .workflow__text--primary {
+    font-size: 1.2rem;
+  }
+  .main-homepage .workflow__text--secondary {
+    font-size: 1rem;
+  }
+  .main-homepage .top-products__title {
+    font-size: 3rem;
+  }
+  .main-homepage .top-products__image {
+    width: 350px;
+  }
+  .main-homepage .top-products__info {
+    font-size: 1.2rem;
+    max-width: 45ch;
+  }
+  .main-homepage .top-products__buttons button {
+    width: 100px;
+    height: 50px;
+    border-radius: 40px;
+  }
+  .main-homepage .discount .container-xl {
+    gap: 20px;
+  }
+  .main-homepage .discount__title {
+    font-size: 3rem;
+  }
+  .main-homepage .discount__description, .main-homepage .discount__info {
+    font-size: 1.2rem;
+  }
+  .main-homepage .discount__link {
+    padding: 10px 40px;
+    border-radius: 30px;
+  }
+}
+@media (min-width: 1200px) {
+  .main-homepage .about,
+  .main-homepage .workflow,
+  .main-homepage .top-products,
+  .main-homepage .discount {
+    padding-block: 250px 10px;
+  }
 }/*# sourceMappingURL=style.css.map */
