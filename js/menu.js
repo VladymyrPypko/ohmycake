@@ -36,15 +36,15 @@ fetch('../src/json/database.json')
             const klassList = target.classList;
             const cakeCard = e.composedPath().find(elem => elem.classList.contains('cake'));
 
-            console.log(cakeCard)
 
             if (klassList.contains('cake__preview') || klassList.contains('cake__filling')) {
                 cakeCard.querySelectorAll('img').forEach(elem => elem.classList.toggle('active'));
             } else if (klassList.contains('cake__full-info')) {
                 cakeCard.querySelector('.cake__info-wrap')
-                    .classList.toggle('show');
-                cakeCard.querySelector('.cake__info-wrap .cake__description')
-                    .classList.toggle('shown');
+                    .classList.toggle('cake__info-wrap--show-description');
+                target.classList.toggle('cake__full-info--shown');
+            } else if (klassList.contains('cake__add-to-cart')) {
+                target.classList.toggle('cake__add-to-cart--added');
             }
         })
     })

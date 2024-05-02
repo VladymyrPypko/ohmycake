@@ -1,16 +1,13 @@
 @use "../presets" as *;
 @use "../mixins" as *;
 
-.main-menu {
-}
-
 .cake {
   border: 1px solid $color-dark-secondary;
   margin: 4vw;
   padding: 3vw 3vw 0;
 
   &:first-child {
-    margin-top: 2vw;
+    margin-top: 3vw;
   }
 
   &__images-wrap {
@@ -41,9 +38,10 @@
     grid-template-rows: repeat(2, 20px) 3vw 0fr;
     transition: all 0.18s linear;
 
-    &.show {
+    &--show-description {
       grid-template-rows: repeat(2, 20px) 3vw 1fr;
       margin-bottom: 3vw;
+
     }
   }
 
@@ -78,6 +76,37 @@
       cursor: pointer;
       background-color: $color-font-secondary;
       color: $color-main;
+    }
+  }
+
+  &__full-info--shown {
+    background-color: $color-font-secondary;
+    color: $color-main;
+  }
+
+  &__add-to-cart {
+    position: relative;
+
+    &--added {
+      background-color: $color-font-secondary;
+      color: $color-main;
+
+      &:after {
+        content: '\2713';
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        right: 0;
+        top: 0;
+        transform: translate(30%, -30%);
+        border-radius: 50px;
+        color: white;
+        font-size: 1rem;
+        background-color: green;
+      }
     }
   }
 

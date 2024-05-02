@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pacifico&family=Quicksand:wght@300..700&display=swap");
@@ -649,7 +650,7 @@ a {
   padding: 3vw 3vw 0;
 }
 .cake:first-child {
-  margin-top: 2vw;
+  margin-top: 3vw;
 }
 .cake__images-wrap {
   display: flex;
@@ -674,7 +675,7 @@ a {
   grid-template-rows: repeat(2, 20px) 3vw 0fr;
   transition: all 0.18s linear;
 }
-.cake__info-wrap.show {
+.cake__info-wrap--show-description {
   grid-template-rows: repeat(2, 20px) 3vw 1fr;
   margin-bottom: 3vw;
 }
@@ -705,6 +706,33 @@ a {
   cursor: pointer;
   background-color: #7F5539;
   color: #EDE0D4;
+}
+.cake__full-info--shown {
+  background-color: #7F5539;
+  color: #EDE0D4;
+}
+.cake__add-to-cart {
+  position: relative;
+}
+.cake__add-to-cart--added {
+  background-color: #7F5539;
+  color: #EDE0D4;
+}
+.cake__add-to-cart--added:after {
+  content: "✓";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  top: 0;
+  transform: translate(30%, -30%);
+  border-radius: 50px;
+  color: white;
+  font-size: 1rem;
+  background-color: green;
 }
 .cake__description {
   position: relative;
