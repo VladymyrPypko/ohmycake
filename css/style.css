@@ -655,7 +655,7 @@ a {
 .cake__gallery {
   display: flex;
   justify-content: end;
-  padding-right: 1vw;
+  padding-right: 0.5vw;
 }
 .cake__gallery-item > i {
   color: #9c6644;
