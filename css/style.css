@@ -644,6 +644,17 @@ a {
   text-shadow: 1px 1px #7F5539;
 }
 
+.cart {
+  position: fixed;
+  z-index: 9999;
+  top: 100px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 0 50% 50% 0;
+  background-color: #DDB892;
+}
+
 .cake {
   border: 1px solid #b08968;
   margin: 4vw;

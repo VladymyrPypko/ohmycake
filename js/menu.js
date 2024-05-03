@@ -46,6 +46,7 @@ fetch('../src/json/database.json')
             if (!['IMG', 'A'].includes(e.target.tagName)) return;
 
             e.preventDefault();
+            e.stopPropagation();
 
             const target = e.target;
             const klassList = target.classList;
