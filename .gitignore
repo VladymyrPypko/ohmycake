@@ -1,1 +1,4 @@
 /.idea
+
+# compiled css
+/css/style.css*
