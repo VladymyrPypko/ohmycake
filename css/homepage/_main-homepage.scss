@@ -2,14 +2,20 @@
 @use "../mixins" as *;
 
 .main-homepage {
-    background-image: url(../src/images/homepage/BackgroundLight.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-color: $color-primary;
 
-    .about {
+    .about,
+    .workflow,
+    .top-products,
+    .discount {
         padding-block: 70px 10px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top;
+    }
+    
+    .about {
+        background-image: url('../src/images/homepage/BackgroundSpecial.png');
+        background-color: $color-primary;
 
         .container-xl {
             display: flex;
@@ -61,11 +67,7 @@
     }
 
     .workflow {
-        padding-block: 70px 10px;
         background-image: url('../src/images/homepage/Background.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: top;
         background-color: $color-main;
 
         .container-xl {
@@ -73,6 +75,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+        }
+
+        &__title {
+            margin-bottom: 20px;
+            font-family: $font-family-secondary;
+            font-size: 1.7rem;
+            font-weight: 400;
+            color: $color-font-secondary
         }
 
         &__box {
@@ -123,11 +133,7 @@
     }
 
     .top-products {
-        padding-block: 70px 10px;
         background-image: url('../src/images/homepage/BackgroundLight.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: top;
         background-color: $color-primary;
 
         .container-xl {
@@ -220,11 +226,7 @@
     }
 
     .discount {
-        padding-block: 70px 10px;
         background-image: url('../src/images/homepage/Background.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: top;
         background-color: $color-special;
         color: $color-font-secondary;
 
@@ -238,15 +240,16 @@
 
         &__title {
             text-align: center;
-            text-shadow: 1px 1px 2px $color-font-primary;
             font-family: $font-family-secondary;
             font-size: 2rem;
             font-weight: 200;
+            text-shadow: 1px 1px 2px $color-font-primary;
             color: $color-main;
             
         }
         
-        &__description, &__info {
+        &__description, 
+        &__info {
             max-width: 25ch;
             text-align: center;
             font-size: 0.9rem;
@@ -259,7 +262,6 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
-            box-shadow: inset 0px 0px 10px $color-special;
         }
 
         &__cake {
@@ -270,7 +272,7 @@
             display: inline-block;
             width: 50px;
             height: 50px;
-            background-image: url(../src/images/homepage/main/discount/MiniT-Overload.png);
+            background-image: url('../src/images/homepage/main/discount/MiniT-Overload.png');
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
@@ -293,6 +295,7 @@
             line-height: 20px;
             letter-spacing: 2px;
             color: $color-font-secondary;
+            transition: all .6s;
 
             &:focus-visible,
             &:hover {
@@ -300,6 +303,215 @@
                 color: $color-main;
                 text-shadow: 1px 1px $color-font-secondary;
             }
+        }
+    }
+
+    @include xs {
+        .about,
+        .workflow,
+        .top-products,
+        .discount {
+            padding-block: 100px 10px;
+        }
+    }
+
+    @include md {
+        .about,
+        .workflow,
+        .top-products,
+        .discount {
+            padding-block: 140px 10px;
+        }
+        
+        .about {
+    
+            &__title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+    
+            &__box {
+                grid-template-rows: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
+            }
+    
+            &__item {
+                gap: 20px;
+            }
+            
+            &__info {
+                font-size: 1rem;
+            }
+        }
+    
+        .workflow {
+
+            &__title {
+                margin-bottom: 40px;
+                font-size: 2rem;
+            }
+    
+            &__box {
+                gap: 20px;
+            }
+    
+            &__item {
+                gap: 10px;
+                padding: 15px;
+            }
+    
+            &__text--primary {
+                font-size: 1rem;
+            }
+    
+            &__text--secondary {
+                font-size: 0.9rem;
+            }
+        }
+    
+        .top-products {
+    
+            &__container {
+                flex-direction: row;
+                justify-content: center;
+                gap: 40px;
+            }
+            
+            &__image {
+                width: 275px;
+            }
+            
+            &__info {
+                font-size: 1rem;
+                max-width: 45ch;
+            }
+        }
+    
+        .discount {
+            
+            &__description, 
+            &__info {
+                font-size: 1rem;
+            }
+            
+            &__gallery {
+                gap: 10px;
+            }
+    
+            &__cake {
+                width: 75px;
+            }
+    
+            &__bonus {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+
+    @include lg {
+        .about,
+        .workflow,
+        .top-products,
+        .discount {
+            padding-block: 150px 10px;
+        }
+        
+        .about {
+    
+            &__title {
+                font-size: 3rem;
+            }
+
+            &__box {
+                column-gap: 100px;
+            }
+
+            &__logo {
+                padding: 25px;
+            }
+    
+            &__image {
+                width: 50px;
+            }
+            
+            &__info {
+                font-size: 1.2rem;
+            }
+        }
+    
+        .workflow {
+
+            &__title {
+                font-size: 3rem;
+            }
+    
+            &__box {
+                grid-template-rows: 1fr;
+                grid-template-columns: repeat(4, 1fr);
+            }
+    
+            &__text--primary {
+                font-size: 1.2rem;
+            }
+    
+            &__text--secondary {
+                font-size: 1rem;
+            }
+        }
+    
+        .top-products {
+
+            &__title {
+                font-size: 3rem;
+            }
+
+            &__image {
+                width: 350px;
+            }
+            
+            &__info {
+                font-size: 1.2rem;
+                max-width: 45ch;
+            }
+
+            &__buttons {
+                & button {
+                    width: 100px;
+                    height: 50px;
+                    border-radius: 40px;
+                }
+            }
+        }
+    
+        .discount {
+
+            .container-xl {
+                gap: 20px;
+            }
+
+            &__title {
+                font-size: 3rem;
+            }
+            
+            &__description, 
+            &__info {
+                font-size: 1.2rem;
+            }
+
+            &__link {
+                padding: 10px 40px;
+                border-radius: 30px;
+            }
+        }
+    }
+
+    @include xl {
+        .about,
+        .workflow,
+        .top-products,
+        .discount {
+            padding-block: 250px 10px;
         }
     }
 }
