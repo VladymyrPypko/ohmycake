@@ -10,6 +10,17 @@
     margin-top: 3vw;
   }
 
+  &__gallery {
+    display: flex;
+    justify-content: end;
+    padding-right: 1vw;
+
+    &-item > i {
+      color: $color-font-primary;
+      font-size: 2rem;
+    }
+  }
+
   &__images-wrap {
     display: flex;
     overflow: hidden;

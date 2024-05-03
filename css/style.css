@@ -652,6 +652,15 @@ a {
 .cake:first-child {
   margin-top: 3vw;
 }
+.cake__gallery {
+  display: flex;
+  justify-content: end;
+  padding-right: 1vw;
+}
+.cake__gallery-item > i {
+  color: #9c6644;
+  font-size: 2rem;
+}
 .cake__images-wrap {
   display: flex;
   overflow: hidden;

@@ -1,4 +1,3 @@
-
 fetch('../src/json/database.json')
     .then(db => db.json())
     .then(db => {
@@ -9,6 +8,10 @@ fetch('../src/json/database.json')
             menu.insertAdjacentHTML(
                 'beforeend',
                 `<li data-id="${cake.id}" class="menu__cake cake">
+                    <div class="cake__gallery">
+                       <a class="cake__gallery-item" data-lightbox="cake${cake.id}" href="${cake.preview['1000']}"><i class='bx bxs-image' ></i></a>
+                       <a class="cake__gallery-item" data-lightbox="cake${cake.id}" href="${cake.filling['1000']}"></a> 
+                    </div>
                     <div class="cake__images-wrap">
                         <img class="cake__preview active" src="${cake.preview['590']}" alt="cake-preview">
                         <img class="cake__filling" src="${cake.filling['590']}" alt="cake-filling">
@@ -47,4 +50,4 @@ fetch('../src/json/database.json')
                 target.classList.toggle('cake__add-to-cart--added');
             }
         })
-    })
+    });
