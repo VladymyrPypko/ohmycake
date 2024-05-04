@@ -1,15 +1,159 @@
 @use "../presets" as *;
 @use "../mixins" as *;
 
+.main-menu-loading {
+  min-height: 100vh;
+}
+
 .cart {
   position: fixed;
-  z-index: 9999;
-  top: 100px;
-  left: 0;
-  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  top: 80px;
+  left: -80px;
+  width: 70px;
   height: 50px;
-  border-radius: 0 50% 50% 0;
+  border-radius: 0 30px 30px 0;
+  padding: 0 15px 0 20px;
   background-color: $color-secondary;
+  transition: left 0.18s linear;
+
+  &--shown {
+    left: 0;
+  }
+
+  &__open {
+    color: $color-font-primary;
+    font-size: 2rem;
+  }
+
+  &__counter {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 20px;
+    height: 20px;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    font-size: .6rem;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+  }
+
+  &__price {
+    font-weight: bold;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: '\20B4';
+      right: -12px;
+    }
+  }
+
+  &__order {
+    border-radius: 5px;
+    padding: 10px;
+    text-transform: uppercase;
+    color: $color-primary;
+    background-color: $color-font-secondary;
+  }
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  &--show {
+    display: block;
+  }
+
+  &__dialog {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border-radius: 5px;
+    background-color: $color-secondary;
+  }
+
+  &__header {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $color-font-secondary;
+    padding: 15px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__close {
+    position: relative;
+    width: 15px;
+    height: 15px;
+  }
+
+  &__close:before,
+  &__close:after {
+    cursor: pointer;
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    background-color: $color-font-primary;
+  }
+
+  &__close:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &__close:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &__body {
+    flex: 1;
+    min-height: 40vh;
+    height: 40vh;
+    max-height: 40vh;
+
+    padding: 2vw;
+    overflow-y: scroll;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 25px;
+    border-top: 1px solid $color-font-secondary;
+    padding: 3vw;
+  }
 }
 
 .cake {
@@ -57,11 +201,11 @@
   &__info-wrap {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(2, 20px) 3vw 0fr;
+    grid-template-rows: repeat(2, minmax(min-content, max-content)) 3vw 0fr;
     transition: all 0.18s linear;
 
     &--show-description {
-      grid-template-rows: repeat(2, 20px) 3vw 1fr;
+      grid-template-rows: repeat(2, minmax(min-content, max-content)) 3vw 1fr;
       margin-bottom: 3vw;
 
     }
@@ -82,6 +226,7 @@
     grid-row: 1 / span 2;
     display: flex;
     justify-content: end;
+    align-items: center;
     gap: 3vw;
   }
 
@@ -90,7 +235,7 @@
     display: flex;
     align-items: center;
     border-radius: 1vw;
-    padding-inline: 1.2vw;
+    padding: 1.2vw;
     color: $color-font-primary;
     font-size: 2rem;
 
@@ -137,5 +282,64 @@
     grid-column: 1 / span 2;
     grid-row: 4;
     overflow-y: hidden;
+  }
+}
+
+.order {
+  display: grid;
+  grid-template-columns: 20% 1fr 20%;
+  grid-template-rows: repeat(2, auto);
+  column-gap: 2vw;
+  font-size: 0.8rem;
+
+  &:not(:last-child) {
+    padding-bottom: 5vw;
+    //border-bottom: 1px solid $color-dark-secondary;
+  }
+
+  &__image {
+    width: 100%;
+    align-self: center;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  &__name {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+  }
+
+  &__calculator {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+  }
+
+  &__quantity-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &__minus,
+  &__plus {
+    font-size: 1.5rem;
+    color: $color-font-secondary;
+  }
+
+  &__quantity {
+    width: 10vw;
+    text-align: center;
+  }
+
+  &__remove {
+    justify-self: center;
+    align-self: center;
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    font-size: 1.5rem;
+    color: $color-font-secondary;
   }
 }
