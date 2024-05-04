@@ -10,9 +10,11 @@ const getCartStorage = (() => {
 })();
 
 const cakeIteHTML = (cake, isAdded) => {
-    return `<li data-id="${cake.id}" data-preview="${cake.preview['590']}" data-name="${cake.name}" data-price="${cake.price}" class="menu__cake cake">
+    return `<li data-id="${cake.id}" data-preview="${cake.preview['590']}"
+                data-name="${cake.name}" data-price="${cake.price}"
+                data-description="${cake.description}" class="menu__cake cake">
         <div class="cake__gallery">
-           <a class="cake__gallery-item" data-lightbox="cake${cake.id}" href="${cake.preview['1000']}"><i class='bx bxs-image' ></i></a>
+           <a class="cake__gallery-item bx bxs-image" data-lightbox="cake${cake.id}" href="${cake.preview['1000']}"></a>
            <a class="cake__gallery-item" data-lightbox="cake${cake.id}" href="${cake.filling['1000']}"></a> 
         </div>
         <div class="cake__images-wrap">
@@ -23,10 +25,9 @@ const cakeIteHTML = (cake, isAdded) => {
             <h4 class="cake__name">${cake.name}</h4>
             <span class="cake__price">${cake.price} &#8372;</span>
             <div class="cake__control">
-                <a href="#" class="cake__full-info bx bx-detail"></a>
+                <a href="#" data-target="#cakeDescriptionModal" class="cake__show-description bx bx-detail"></a>
                 <a href="#" class="cake__add-to-cart ${isAdded && 'cake__add-to-cart--added'} bx bx-cart"></a>
             </div>
-            <p class="cake__description">${cake.description}</p>
         </div>
     </li>`;
 };
@@ -49,11 +50,6 @@ const cartItemHTML = (id, cartItem) => {
 
 const switchCakeImages = cakeCard => {
     cakeCard.querySelectorAll('img').forEach(e => e.classList.toggle('active'));
-};
-
-const toggleCakeDescriptionIcon = (cakeCard, klassList) => {
-    cakeCard.querySelector('.cake__info-wrap').classList.toggle('cake__info-wrap--show-description');
-    klassList.toggle('cake__full-info--shown');
 };
 
 const addToCart = (cartId, { preview, name, price, quantity = 1 }) => {
@@ -109,13 +105,17 @@ fetch('../src/json/database.json')
             const target = e.target;
             const klassList = target.classList;
             const cakeCardBlock = e.composedPath().find(elem => elem.classList.contains('cake'));
+            const cakeData = cakeCardBlock.dataset;
 
             if (klassList.contains('cake__preview') || klassList.contains('cake__filling')) {
                 switchCakeImages(cakeCardBlock);
-            } else if (klassList.contains('cake__full-info')) {
-                toggleCakeDescriptionIcon(cakeCardBlock, klassList)
+            } else if (klassList.contains('cake__show-description')) {
+                const descriptionModal = document.querySelector('#cakeDescriptionModal');
+
+                descriptionModal.querySelector('.modal__title').textContent = cakeData.name;
+                descriptionModal.querySelector('.modal__body').textContent = cakeData.description;
+                descriptionModal.classList.add('modal--show');
             } else if (klassList.contains('cake__add-to-cart')) {
-                const cakeData = cakeCardBlock.dataset;
 
                 klassList.toggle('cake__add-to-cart--added') ? addToCart(cakeData.id, cakeData) : removeFromCart(cakeData.id);
                 toggleCartOpenLink();
@@ -136,18 +136,20 @@ fetch('../src/json/database.json')
     })
     .then(() => toggleCartOpenLink());
 
+// common handler for all modal windows -> close modal
+document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+        if (e.target.dataset.action !== 'modal-close') return;
+
+        e.currentTarget.classList.remove('modal--show');
+    });
+});
+
 // cart-modal open
 document.querySelector('a[data-target="#cartModal"]').addEventListener('click', (e) => {
     e.preventDefault();
 
     document.querySelector(e.target.dataset.target).classList.add('modal--show');
-});
-
-// cart-modal close
-document.querySelector('#cartModal').addEventListener('click', (e) => {
-    if (e.target.dataset.action !== 'modal-close') return;
-
-    e.currentTarget.classList.remove('modal--show');
 });
 
 // change order quantities

@@ -1,0 +1,61 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.order {
+  display: grid;
+  grid-template-columns: 20% 1fr 20%;
+  grid-template-rows: repeat(2, auto);
+  column-gap: 15px;
+  font-size: 0.8rem;
+
+  &__image {
+    width: 100%;
+    align-self: center;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  &__name {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    font-weight: bold;
+  }
+  @include lg {
+    font-size: 1rem;
+  }
+
+  &__calculator {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+  }
+
+  &__quantity-wrap {
+    display: flex;
+    //justify-content: space-around;
+    align-items: center;
+  }
+
+  &__minus,
+  &__plus {
+    font-size: 1.6rem;
+    color: $color-font-secondary;
+  }
+
+  &__quantity {
+    width: 50px;
+    text-align: center;
+  }
+
+  &__remove {
+    justify-self: center;
+    align-self: center;
+    grid-column: 3;
+    grid-row: 2;
+    font-size: 1.6rem;
+    color: $color-font-secondary;
+  }
+}

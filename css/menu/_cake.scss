@@ -1,0 +1,129 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.cake {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid $color-dark-secondary;
+  padding: 15px;
+  font-size: 1.5rem;
+
+  @include md {
+    font-size: 1.25rem;
+  }
+
+  @include lg {
+    font-size: 1rem;
+  }
+
+  &__gallery {
+    display: flex;
+    justify-content: end;
+
+    &-item {
+      color: $color-font-primary;
+      font-size: 2rem;
+    }
+  }
+
+  &__images-wrap {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__preview,
+  &__filling {
+    opacity: 0;
+    position: relative;
+    width: 100%;
+    transition: all 0.18s linear;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &__filling {
+    left: -100%;
+  }
+
+  &__info-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__name {
+    flex-basis: 100%;
+  }
+
+  &__price {
+    flex-basis: 50%;
+  }
+
+  &__control {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px
+  }
+
+  &__add-to-cart,
+  &__show-description {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 7px;
+    color: $color-font-primary;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $color-font-secondary;
+      color: $color-main;
+    }
+
+    @include xl {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__full-info--shown {
+    background-color: $color-font-secondary;
+    color: $color-main;
+  }
+
+  &__add-to-cart {
+    position: relative;
+
+    &--added {
+      background-color: $color-font-secondary;
+      color: $color-main;
+
+      &:after {
+        content: '\2713';
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        right: 0;
+        top: 0;
+        transform: translate(30%, -30%);
+        border-radius: 50px;
+        color: white;
+        background-color: green;
+      }
+    }
+  }
+
+  &__description {
+    position: relative;
+    grid-column: 1 / span 2;
+    grid-row: 4;
+    overflow-y: hidden;
+  }
+}
