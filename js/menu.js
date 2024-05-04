@@ -71,10 +71,12 @@ const addToCart = (cartId, { preview, name, price, quantity = 1 }) => {
 const removeFromCart = (id) => {
     const cart = getCartStorage();
 
+    document.querySelector(`.cart .cart__list li[data-id="${id}"]`).remove();
+    document.querySelector(`.cart .cart__counter`).textContent -= 1;
+    document.querySelector('.cart .cart__total-price').textContent -= (cart[id].price * cart[id].quantity);
+
     delete cart[id];
     setCartStorage(cart);
-
-    document.querySelector(`.cart .cart__list li[data-id="${id}"]`).remove();
 };
 
 const toggleCartOpenLink = () => {
@@ -148,7 +150,7 @@ document.querySelector('#cartModal').addEventListener('click', (e) => {
     e.currentTarget.classList.remove('modal--show');
 });
 
-// order quantities
+// change order quantities
 document.querySelector('.cart').addEventListener('click', (e) => {
     if (!['order-quantity-plus', 'order-quantity-minus'].includes(e.target.dataset.action)) return;
 
@@ -169,34 +171,28 @@ document.querySelector('.cart').addEventListener('click', (e) => {
         case 'order-quantity-minus':
             if (+quantityBlock.textContent === 1) return;
 
-            quantityBlock.textContent = +quantityBlock.textContent - 1;
-            totalCartPriceBlock.textContent = +totalCartPriceBlock.textContent - +quantityBlock.dataset.priceItem;
+            quantityBlock.textContent -= 1;
+            totalCartPriceBlock.textContent -= quantityBlock.dataset.priceItem;
             cart[orderBlock.dataset.id].quantity -= 1;
             break;
     }
 
-    setCartStorage(cart);
     currentOrderPriceBlock.textContent = +quantityBlock.textContent * +quantityBlock.dataset.priceItem;
+    setCartStorage(cart);
 });
 
+// remove from cart
 document.querySelector('.cart').addEventListener('click', (e) => {
     if (e.target.dataset.action !== 'order-remove') return;
 
     e.preventDefault();
 
-    const cart = getCartStorage();
     const orderBlock = e.composedPath().find(elem => elem.classList.contains('order'));
-    const quantityBlock = orderBlock.querySelector('.order__quantity');
-    const totalCartPriceBlock = e.currentTarget.querySelector('.cart__total-price');
 
     e.currentTarget.parentNode
-        .querySelector(`li[data-id="${orderBlock.dataset.id}"] .cake__add-to-cart`)
+        .querySelector(`li.cake[data-id="${orderBlock.dataset.id}"] .cake__add-to-cart`)
         .classList.remove('cake__add-to-cart--added');
-    delete cart[orderBlock.dataset.id]
-    setCartStorage(cart);
 
-    orderBlock.remove();
-    totalCartPriceBlock.textContent =
-        +totalCartPriceBlock.textContent - (+quantityBlock.textContent * +quantityBlock.dataset.priceItem);
+    removeFromCart(orderBlock.dataset.id);
+    toggleCartOpenLink();
 });
-
