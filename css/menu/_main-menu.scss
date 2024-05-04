@@ -45,7 +45,7 @@
     color: white;
   }
 
-  &__price {
+  &__total-price {
     font-weight: bold;
     position: relative;
 
@@ -294,7 +294,6 @@
 
   &:not(:last-child) {
     padding-bottom: 5vw;
-    //border-bottom: 1px solid $color-dark-secondary;
   }
 
   &__image {
@@ -325,7 +324,7 @@
 
   &__minus,
   &__plus {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: $color-font-secondary;
   }
 
@@ -339,7 +338,7 @@
     align-self: center;
     grid-column: 3;
     grid-row: 1 / span 2;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: $color-font-secondary;
   }
 }
