@@ -1,2 +1,222 @@
 @use "../presets" as *;
 @use "../mixins" as *;
+
+
+.main-reviews {
+    background: url('../src/images/review/parelax/pngegg.png') no-repeat fixed;
+    background-position: center center;
+    background-size: cover;
+
+    .container-xl {
+        padding-block: 50px;
+    }
+    
+    .container-reviews {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: $color-primary;
+        padding-block: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 30px $color-font-secondary;
+        max-width: 400px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        
+        &__title {
+            font-family: $font-family-secondary;
+            font-size: 2rem;
+            font-weight: 400;
+            color: $color-font-secondary;
+            text-shadow: 2px 2px $color-main;
+        }
+
+        &__rating {
+            font-size: 1.2rem;
+            color: $color-font-secondary;
+        }
+
+        .stars {
+            font-size: 2rem;
+
+            .star {
+                cursor: pointer;
+            }
+        }
+
+        .one {
+            color: rgb(255, 0, 0);
+        }
+        
+        .two {
+            color: rgb(255, 106, 0);
+        }
+        
+        .three {
+            color: rgb(251, 255, 120);
+        }
+        
+        .four {
+            color: rgb(255, 255, 0);
+        }
+        
+        .five {
+            color: rgb(24, 159, 14);
+        }
+
+        &__text {
+            text-transform: uppercase;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        &__textarea {
+            width: 80%;
+            padding: 8px;
+            min-height: 60px;
+            outline: none;
+            resize: none;
+            background-color: $color-main;
+            border: 1px solid $color-font-secondary;
+            border-radius: 10px;
+            box-shadow: inset 0px 0px 5px $color-dark-secondary;
+            font-family: $font-family-main;
+            font-size: 1.2rem;
+            color: $color-font-secondary;
+            line-height: 20px;
+            caret-color: $color-font-secondary;
+        }
+
+        &__submit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-block: 10px;
+            padding-inline: 30px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: $color-main;
+            background-color: $color-font-secondary;
+            border: 2px solid $color-dark-secondary;
+            border-radius: 12px;
+            transition: all .5s;
+
+            &:focus-visible,
+            &:hover,
+            &:active {
+                background-color: $color-main;
+                color: $color-font-secondary;
+            }
+        }
+
+        .reviews {
+            max-width: 380px;
+            padding: 20px 30px;
+            overflow: auto;
+
+            & p:first-of-type {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            & p:last-of-type {
+                font-family: $font-family-reviews;
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .user-review {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px;
+        padding: 25px;
+        background-color: #EDE0D450;
+        backdrop-filter: blur(10px);
+        border: 1px solid $color-font-secondary;
+        border-radius: 20px;
+        box-shadow: inset 0px 0px 5px $color-font-secondary;
+    
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        &__subject--title {
+            font-family: $font-family-secondary;
+            font-size: 2rem;
+            font-weight: 400;
+            text-shadow: 1px 1px $color-font-secondary;
+        }
+
+        &__name {
+            font-family: $font-family-secondary;
+            font-size: 1.7rem;
+            font-weight: 400;
+            color: $color-font-secondary;
+        }
+
+        .star i:not(:first-child) {
+            color: gold;
+            text-shadow: 0px 0px 2px $color-font-primary;
+        }
+
+        &__text {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: $lg) {
+           
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &:nth-child(even) {
+                    flex-direction: column;
+                } 
+            
+        }
+    }
+    
+    .user-review__subject {
+        & > img{
+            width: 50%;
+        }
+    @media (max-width: $lg) {
+        
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        
+    }
+    }
+    
+    .user-review__person {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 580px;
+            
+        & > img {
+            display: block;
+            width: 150px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        & > p {
+            font-family: $font-family-reviews;}
+        
+        @media (max-width: $lg) {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

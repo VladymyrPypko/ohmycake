@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-    <div class="wrapper">
+    <div class="wrapper" style="padding-top: 50px;">
         <header class="header-reviews">
             <nav class="navbar">
                 <input type="checkbox" id="navbar-toggle">
@@ -39,18 +41,208 @@
                     <img class="navbar__image" src="../src/images/logo/text-100x100.png" alt="logo">
                 </a>
             </nav>
-            <h2>Header - пишем стили в css/reviews/_header-reviews.scss</h2>
         </header>
-
-        <main class="main-reviews">
-            <h2>Main - пишем стили в css/reviews/_main-reviews.scss</h2>
-        </main>
         
+        <main class="main-reviews">
+                <div class="container-xl">
+                    <div class="container-reviews">
+                        <h2 class="container-reviews__title">Reviews</h2>
+                        <div class="container-reviews__rating">
+                            <span class="container-reviews__range" id="rating">0</span>/5
+                        </div>
+                        <div class="stars" id="stars">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <p class="container-reviews__text">Share your review:</p>
+
+                        <textarea class="container-reviews__textarea" id="review"></textarea>
+                        
+                        <button class="container-reviews__submit" id="submit">Submit</button>
+                        <div class="reviews" id="reviews">
+                        </div>
+                    </div>
+
+                    <div class="user-review">
+                        <div class="user-review__subject">
+                            <h3 class="user-review__subject--title">Cappuccino-Choco-Crunch</h3>
+                            <img class="user-review__subject--image" src="../src/images/review/main/cappuccino-choco-crunch-590-2.png" alt="cake">
+                        </div>
+                        <div class="user-review__person">
+                            <img class="user-review__photo" src="../src/images/review/customers/roma.jpeg" alt="man">
+                            <h3 class="user-review__name">Roman.G</h3>
+                            <div class="star">
+                                <i class='bx bxs-cake'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
+                            <p class="user-review__text">
+                                Tastes great! Delivery TOP, exactly as stated. So I'll be ordering from you often and everything really went well. THANKS!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="user-review">
+                        <div class="user-review__subject">
+                            <h3 class="user-review__subject--title">Brazo-Sansrival</h3>
+                            <img class="user-review__subject--image" src="../src/images/review/main/new-brazo-sansrival-590-2.png" alt="cake">
+                        </div>
+                        <div class="user-review__person">
+                            <img class="user-review__photo" src="../src/images/review/customers/alex.jpeg" alt="man">
+                            <h3 class="user-review__name">Alex.M</h3>
+                            <div class="star">
+                                <i class='bx bxs-cake'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
+                            <p class="user-review__text">
+                                The cake tasted delicious and was in top condition when delivered. My girlfriend was very happy about it for her birthday.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="user-review">
+                        <div class="user-review__subject">
+                            <h3 class="user-review__subject--title">Carrot-Cheesecake</h3>
+                            <img class="user-review__subject--image" src="../src/images/review/main/new-carrot-cheesecake-590-2.png" alt="cake">
+                        </div>
+                        <div class="user-review__person">
+                            <img class="user-review__photo" src="../src/images/review/customers/anna.jpeg" alt="woman">
+                            <h3 class="user-review__name">Anna.W</h3>
+                            <div class="star">
+                                <i class='bx bxs-cake'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
+                            <p class="user-review__text">The cake was amazing...
+                                It was great and tasted really good...
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="user-review">
+
+                        <div class="user-review__subject">
+                            <h3 class="user-review__subject--title">Salted-Caramel-Espresso-Tiramisu</h3>
+                            <img class="user-review__subject--image" src="../src/images/review/main/new-salted-caramel-espresso-tiramisu-590-2.png"
+                                alt="cake">
+                        </div>
+                        <div class="user-review__person">
+                            <img class="user-review__photo" src="../src/images/review/customers/bruno.jpeg" alt="man">
+                            <h3 class="user-review__name">Bruno.D</h3>
+                            <div class="star">
+                                <i class='bx bxs-cake'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star-half'></i>
+                            </div>
+                            <p class="user-review__text">
+                                The cake arrived on time and was perfect. Not only did it look great, it also tasted very good. We didn't expect that at all, we thought it looked great, but maybe it just tasted like sugar.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="user-review">
+
+                        <div class="user-review__subject">
+                            <h3 class="user-review__subject--title">Rainbow-Cake</h3>
+                            <img class="user-review__subject--image" src="../src/images/review/main/rainbow-cake-590-2.png" alt="cake">
+                        </div>
+                        <div class="user-review__person">
+                            <img class="user-review__photo" src="../src/images/review/customers/julia.jpeg" alt="woman">
+                            <h3 class="user-review__name">Julia.F</h3>
+                            <div class="star">
+                                <i class='bx bxs-cake'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
+                            <p class="user-review__text">
+                                Ordered on Tuesday evening and delivered on Thursday. The cake was amazing, both visually and taste-wise. Absolutely recommended. This isn't the last time I've ordered a cake. It couldn't be better! Thank you!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="user-review">
+
+                        <div class="user-review__subject">
+                            <h3 class="user-review__subject--title">Nutty-Chocolate-Surprise</h3>
+                            <img class="user-review__subject--image" src="../src/images/review/main/nutty-chocolate-surprise-590-2.png" alt="cake">
+                        </div>
+                        <div class="user-review__person">
+                            <img class="user-review__photo" src="../src/images/review/customers/Karen.jpeg" alt="man">
+                            <h3 class="user-review__name">Karen.B</h3>
+                            <div class="star">
+                                <i class='bx bxs-cake'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
+                            <p class="user-review__text">
+                                I ordered the cake with chocolate Nutty flavor - super delicious.
+                                The delivery is always very quick and the cake looked exactly like the picture.
+                                5 stars and I would order from you again and again.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        </main>
+
         <footer class="footer">
-            <h2>
-                Footer - он будет общим для всех страниц, поэтому тут ничего делать не надо.
-            </h2>
+            <div class="location">
+                <h3 class="location__title">Location</h3>
+                <div class="location__info">
+                    <a href="https://maps.app.goo.gl/t1Ky6XBPUGSfuJfj9" target="_blank" class="location__place">
+                        st. Pushkinskaya, Kyiv, 02000
+                    </a>
+                    <p class="location__time">Mon - Sun, 09:00 - 20:00</p>
+                </div>
+            </div>
+            <div class="contact">
+                <h3 class="contact__title">Contact</h3>
+                <div class="contact__info">
+                    <p class="contact__text">
+                        <span class="contact__text--special">Email:</span>
+                        ohmycake@gmail.com
+                    </p>
+                    <p class="contact__text">
+                        <span class="contact__text--special">Phone:</span>
+                        +38 (097) 111 22 33
+                    </p>
+                </div>
+            </div>
+            <div class="subscribe">
+                <h3 class="subscribe__title">Stay in the loop!</h3>
+                <form action="mailto:ohmycake@gmail.com" class="subscribe__form">
+                    <input class="subscribe__subject" name="subject" value="I&nbsp;want&nbsp;to&nbsp;subscribe." hidden>
+                    <input class="subscribe__body" name="body"
+                        value="Hey&nbsp;Oh&nbsp;My&nbsp;Cake,&nbsp;I'd&nbsp;want&nbsp;to&nbsp;become&nbsp;a&nbsp;subscriber&nbsp;in&nbsp;order&nbsp;to&nbsp;receive&nbsp;any&nbsp;notifications&nbsp;of&nbsp;yours."
+                        hidden>
+                    <p class="subscribe__warn">By pressing the button you agree to receive our notifications.</p>
+                    <button class="subscribe__submit" type="submit">Subscribe</button>
+                </form>
+            </div>
         </footer>
     </div>
+    <script src="../js/reviews.js"></script>
 </body>
+
 </html>
