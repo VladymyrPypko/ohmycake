@@ -54,13 +54,13 @@
             <section class="experience container" >
                     <h2 class="experience__title">Our Story&nbsp</h2>
                     <div class="experience__photographs">
-                        <a class="experience__lightbox" href="../images/aboutpage/make_smallcake.webp" data-lightbox="img-ex" data-title="My caption">
+                        <a class="experience__lightbox" href="../images/aboutpage/make_smallcake.webp" data-lightbox="img-ex" data-title="The process of making cakes">
                             <img class="experience__image" src="../images/aboutpage/make_smallcake.webp" alt="make_smallcake">
                         </a>
-                        <a class="experience__lightbox" href="../images/aboutpage/make_torte.webp" data-lightbox="img-ex" data-title="My caption" >
+                        <a class="experience__lightbox" href="../images/aboutpage/make_torte.webp" data-lightbox="img-ex" data-title="The process of making tortes" >
                             <img class="experience__image" src="../images/aboutpage/make_torte.webp" alt="make_torte">
                         </a>
-                        <a class="experience__lightbox" href="../images/aboutpage/packaging.webp" data-lightbox="img-ex" data-title="My caption" >
+                        <a class="experience__lightbox" href="../images/aboutpage/packaging.webp" data-lightbox="img-ex" data-title="Packaging processn" >
                             <img class="experience__image" src="../images/aboutpage/packaging.webp" alt="packaging">
                         </a>
                     </div>
@@ -86,29 +86,7 @@
                     <p class="team__text" >But we kind of like it that way. It allows our mail order bakery to make sure that each cake is handmade, hand decorated and beautifully packaged. Our small team embodies a spirit of creativity and craftsmanship that permeates every aspect of our bakery. With a focus on quality over quantity, we have the freedom to meticulously handcraft each cake, ensuring that no detail is overlooked. From the initial mixing of ingredients to the final flourish of decoration, our skilled artisans infuse every cake with passion and care. And when it comes to packaging, we take pride in presenting our creations in a way that not only protects them during transit but also adds to the anticipation and delight of our customers upon opening their parcel.
                     </p>
             </section>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                  const images = document.querySelectorAll('.experience__lightbox');
-                  let currentSlide = 0;
-              
-                  function showSlide(index) {
-                    images.forEach((image, i) => {
-                      if (i === index) {
-                        image.style.display = 'block';
-                      } else {
-                        image.style.display = 'none';
-                      }
-                    });
-                  }
-              
-                  function nextSlide() {
-                    currentSlide = (currentSlide === images.length - 1) ? 0 : currentSlide + 1;
-                    showSlide(currentSlide);
-                  }
-                  setInterval(nextSlide, 2000);
-                  showSlide(currentSlide);
-                });
-              </script>
+            <script src="../js/about/aboute.js"></script>
             <section class="leadership container">
                     <h2 class="leadership__title">Leadership</h2>
                     <div class="leadership__info">
