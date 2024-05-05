@@ -1,0 +1,54 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+
+.team {
+
+    &__title {
+        font-size: 23px;
+        margin: 20px 0 20px 0;
+    }
+
+    &__image {
+        width: 80%;
+        border-radius: 15px;
+    }
+
+    &__text {
+        text-align: center;
+        margin: 20px 2% 30px 2%;
+        font-size: 18px;
+    }
+
+    
+    @include sm {
+        &__title {
+            font-size: 25px;
+        }
+    }
+
+    @include md {
+        &__text {
+            text-align: center;
+            margin: 20px 3% 30px 3%;
+            font-size: 18px;
+        }
+    }
+
+    @include lg {
+        &__image {
+            width: 40%;
+        }
+    }
+
+    @include xl {
+        &__title {
+            font-size: 35px;
+        }
+
+        &__text {
+            margin: 20px 20% 40px 20%;
+        }
+    }
+    
+}

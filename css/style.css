@@ -643,4 +643,265 @@ a {
   background-color: #9c6644;
   color: #EDE0D4;
   text-shadow: 1px 1px #7F5539;
+}
+
+.main-about {
+  background-image: url(../src/images/homepage/BackgroundLight.png);
+  padding-top: 12%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: #E6CCB2;
+}
+.main-about .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcom__title {
+  font-family: "Pacifico", cursive;
+  font-size: 30px;
+  color: #9c6644;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+.welcom__text {
+  text-align: center;
+  font-size: 16px;
+  margin: 0 2% 30px 2%;
+}
+@media (min-width: 576px) {
+  .welcom__title {
+    font-size: 33px;
+  }
+  .welcom__text {
+    font-size: 19px;
+    margin: 0 2% 40px 2%;
+  }
+}
+@media (min-width: 768px) {
+  .welcom__title {
+    font-size: 35px;
+  }
+  .welcom__text {
+    font-size: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .welcom__title {
+    font-size: 40px;
+  }
+  .welcom__text {
+    font-size: 18px;
+    margin: 0 7% 40px 7%;
+  }
+}
+@media (min-width: 1200px) {
+  .welcom__text {
+    font-size: 20px;
+    margin: 0 20% 40px 20%;
+  }
+}
+
+.experience {
+  background-color: #b08968;
+}
+.experience__title {
+  font-family: "Caveat", cursive;
+  font-size: 35px;
+  color: #E6CCB2;
+  margin: 20px 0 20px 0;
+  text-align: center;
+  text-decoration: underline;
+}
+.experience__photographs {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.experience__image {
+  width: 80%;
+  margin: 10px 0 10px 0;
+  border-radius: 15px;
+}
+.experience__text {
+  margin: 0 2% 30px 2%;
+}
+.experience__clause {
+  display: none;
+  text-align: center;
+  font-size: 15px;
+  color: #E6CCB2;
+}
+.experience__clause--mod {
+  display: block;
+}
+@media (min-width: 576px) {
+  .experience__title {
+    font-family: "Caveat", cursive;
+    font-size: 38px;
+  }
+  .experience__text {
+    margin: 0 2% 40px 2%;
+  }
+  .experience__clause {
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) {
+  .experience__title {
+    font-size: 40px;
+  }
+  .experience__clause {
+    font-size: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .experience__title {
+    font-size: 45px;
+  }
+  .experience__image {
+    width: 65%;
+    margin: 10px 0 10px 0;
+  }
+  .experience__text {
+    margin: 0 8% 40px 8%;
+  }
+  .experience__clause {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+  }
+  .experience__clause--mod {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .experience__title {
+    font-size: 50px;
+  }
+  .experience__image {
+    width: 40%;
+  }
+  .experience__text {
+    margin: 0 20% 40px 20%;
+  }
+  .experience__clause {
+    font-size: 18px;
+  }
+}
+
+.team__title {
+  font-size: 23px;
+  margin: 20px 0 20px 0;
+}
+.team__image {
+  width: 80%;
+  border-radius: 15px;
+}
+.team__text {
+  text-align: center;
+  margin: 20px 2% 30px 2%;
+  font-size: 18px;
+}
+@media (min-width: 576px) {
+  .team__title {
+    font-size: 25px;
+  }
+}
+@media (min-width: 768px) {
+  .team__text {
+    text-align: center;
+    margin: 20px 3% 30px 3%;
+    font-size: 18px;
+  }
+}
+@media (min-width: 992px) {
+  .team__image {
+    width: 40%;
+  }
+}
+@media (min-width: 1200px) {
+  .team__title {
+    font-size: 35px;
+  }
+  .team__text {
+    margin: 20px 20% 40px 20%;
+  }
+}
+
+.leadership {
+  background-color: #b08968;
+}
+.leadership__title {
+  font-size: 35px;
+  margin: 20px 0 20px 0;
+  font-family: #E6CCB2;
+  color: #E6CCB2;
+}
+.leadership__info {
+  display: flex;
+  flex-direction: column;
+}
+.leadership__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 20px 0;
+}
+.leadership__image {
+  width: 80%;
+  margin: 10px 0;
+}
+.leadership__name {
+  text-align: center;
+  color: #E6CCB2;
+}
+.leadership__position {
+  text-align: center;
+  color: #EDE0D4;
+}
+@media (min-width: 992px) {
+  .leadership__info {
+    flex-direction: row;
+  }
+}
+
+.partnership__title {
+  font-family: "Caveat", cursive;
+  font-size: 35px;
+  margin: 20px 0 20px 0;
+  text-align: center;
+  text-decoration: underline;
+}
+.partnership__text {
+  text-align: center;
+  margin: 0 2% 10px 2%;
+  font-size: 18px;
+}
+.partnership__logos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+.partnership__image {
+  width: 40%;
+  padding: 10px;
+}
+@media (min-width: 576px) {
+  .partnership__image {
+    width: 20%;
+  }
+}
+@media (min-width: 1200px) {
+  .partnership__title {
+    font-size: 45px;
+  }
+  .partnership__text {
+    margin: 0 20% 40px 20%;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OMC | About us</title>
     <link rel="icon" href="../src/images/logo/no-text-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -38,18 +39,143 @@
                     <img class="navbar__image" src="../src/images/logo/text-100x100.png" alt="logo">
                 </a>
             </nav>
-            <h2>Header - пишем стили в css/about/_header-about.scss</h2>
         </header>
 
         <main class="main-about">
-            <h2>Main - пишем стили в css/about/_main-about.scss</h2>
+            <section class="welcom">
+                <h2 class="welcom__title">Welcome to Oh My Cake</h2>
+                <div class="welcom__text">
+                    <p class="welcom__sentence">Here is ‘Oh My Cake’ which showcases his love and passion for Cakes and Pastries.‘Oh My Cake’ specializes in Cake, Cheesecakes, Cupcakes, Shortbreads, Breakfast Pastry, Pie and French Tarts.
+                        Every day with a rigorous precision, Lalit prepares a perfect dessert on daily bases. All of his creations are truly unique, and he regularly updates his range with seasonal influences to take advantage of what nature does best and use the freshest ingredients available.
+                    </p> 
+                    <p class="welcom__sentence">We look forward to welcoming you all.</p>
+                </div>
+            </section>
+            <section class="experience container" >
+                    <h2 class="experience__title">Our Story&nbsp</h2>
+                    <div class="experience__photographs">
+                        <a class="experience__lightbox" href="../images/aboutpage/make_smallcake.webp" data-lightbox="img-ex" data-title="My caption">
+                            <img class="experience__image" src="../images/aboutpage/make_smallcake.webp" alt="make_smallcake">
+                        </a>
+                        <a class="experience__lightbox" href="../images/aboutpage/make_torte.webp" data-lightbox="img-ex" data-title="My caption" >
+                            <img class="experience__image" src="../images/aboutpage/make_torte.webp" alt="make_torte">
+                        </a>
+                        <a class="experience__lightbox" href="../images/aboutpage/packaging.webp" data-lightbox="img-ex" data-title="My caption" >
+                            <img class="experience__image" src="../images/aboutpage/packaging.webp" alt="packaging">
+                        </a>
+                    </div>
+                    <div class="experience__text">
+
+                        <p class="experience__clause">When you send a cake, we know you aren’t just sending dessert. You are sending a moment of celebration, joy, healing and togetherness. When you can’t be there to celebrate in person, Oh My Cake makes it easy to delight your family, friends and colleagues with our freshly baked desserts delivered right to their doorstep ready to enjoy. Our experienced bakers mix all of our batters and frostings by hand, just like grandma used to make. 
+                        </p>
+                        <p class="experience__clause">
+                            We always bake with whole buttermilk, fresh eggs and real butter – never a cake mix or commercially made frostings.We understand that elegant presentation matters as much as the taste, and our team of very talented cake artisans take the time to decorate every cake by hand. Our shipping team then carefully packages your cake in our custom designed decorative boxes and sends them off to you. Oh My Cake goes the extra mile to make sure our mail order desserts deliver an experience that makes you proud that you chose us to create the gift people will talk about long after the celebration is over. 
+                        </p>
+                        <p class="experience__clause">
+                            The Oh My Cake team is a diverse group of people working closely together each day to provide desserts that help people celebrate the joys in their own lives and the lives of others. To share love and good wishes. And to bring a bit of comfort and happiness to those who deserve it. We love what we do, take pride in each and every cake we put our name on, and guarantee your complete satisfaction. We live our mission everyday – to help people celebrate, commemorate, appreciate, and send a message of love through the joy of cake. We look forward to playing a small part in the important times in your lives.
+                        </p>
+                        <p class="experience__clause experience__clause--mod">
+                            We 'Oh My Cake' is more than just dessert delivery. We're about sharing joy, celebration, and togetherness. Our handmade cakes use quality ingredients like buttermilk and real butter, never mixes. Each cake is carefully decorated by our skilled artisans and shipped in custom boxes for a beautiful presentation. Our diverse team is dedicated to spreading happiness and comfort through our delicious treats. With every cake, we aim to make your celebrations memorable.
+                        </p>
+                    </div>
+            </section>
+            
+            <section class="team container">
+                    <h3 class="team__title">We’re a small team</h3>
+                    <img class="team__image" src="../images/aboutpage/team.webp" alt="team">
+                    <p class="team__text" >But we kind of like it that way. It allows our mail order bakery to make sure that each cake is handmade, hand decorated and beautifully packaged. Our small team embodies a spirit of creativity and craftsmanship that permeates every aspect of our bakery. With a focus on quality over quantity, we have the freedom to meticulously handcraft each cake, ensuring that no detail is overlooked. From the initial mixing of ingredients to the final flourish of decoration, our skilled artisans infuse every cake with passion and care. And when it comes to packaging, we take pride in presenting our creations in a way that not only protects them during transit but also adds to the anticipation and delight of our customers upon opening their parcel.
+                    </p>
+            </section>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                  const images = document.querySelectorAll('.experience__lightbox');
+                  let currentSlide = 0;
+              
+                  function showSlide(index) {
+                    images.forEach((image, i) => {
+                      if (i === index) {
+                        image.style.display = 'block';
+                      } else {
+                        image.style.display = 'none';
+                      }
+                    });
+                  }
+              
+                  function nextSlide() {
+                    currentSlide = (currentSlide === images.length - 1) ? 0 : currentSlide + 1;
+                    showSlide(currentSlide);
+                  }
+                  setInterval(nextSlide, 2000);
+                  showSlide(currentSlide);
+                });
+              </script>
+            <section class="leadership container">
+                    <h2 class="leadership__title">Leadership</h2>
+                    <div class="leadership__info">
+                        <div class="leadership__item">
+                            <img  class="leadership__image" src="../images/aboutpage/owner.webp" alt="owner">
+                            <h3 class="leadership__name">Gwendolyn</h3>
+                            <p class="leadership__position">President & owner</p>
+                        </div>
+                        <div class="leadership__item">
+                            <img class="leadership__image" src="../images/aboutpage/vise_president.webp" alt="vise_president">
+                            <h3 class="leadership__name">Angie</h3>
+                            <p class="leadership__position">Vice president of operations</p>
+                        </div>
+                        <div class="leadership__item">
+                            <img class="leadership__image" src="../images/aboutpage/director_of_operations.webp" alt="">
+                            <h3 class="leadership__name">Thom</h3>
+                            <p class="leadership__position">Director of operations</p>
+                        </div>
+                    </div>
+            </section>
+            <section class="partnership container">
+                    <h3 class="partnership__title">Partnership</h3>
+                    <p class="partnership__text">Partnering with InStyle, Entrepreneur magazine, CNNMoney, and The Miami Herald has been a privilege for our bakery, Oh My Cake. These collaborations allow us to showcase our handmade, hand-decorated, and beautifully packaged cakes to a wider audience, highlighting our dedication to craftsmanship and customer satisfaction.</p>
+                    <div class="partnership__logos">
+                        <img class="partnership__image" src="../images/aboutpage/Logo_InStyle.png" alt="logo_inStyle">
+                        <img class="partnership__image" src="../images/aboutpage/entrepreneurship.png" alt="entrepreneurship">
+                        <img class="partnership__image" src="../images/aboutpage/The-Miami-Herald-Logo.png" alt="">
+                        <img class="partnership__image" src="../images/aboutpage/CNNMoney_Logo.png" alt="CNNMoney_Logo">
+                    </div>
+            </section>
         </main>
         
         <footer class="footer">
-            <h2>
-                Footer - он будет общим для всех страниц, поэтому тут ничего делать не надо.
-            </h2>
+            <div class="location">
+                <h3 class="location__title">Location</h3>
+                <div class="location__info">
+                    <a href="https://maps.app.goo.gl/t1Ky6XBPUGSfuJfj9" target="_blank" class="location__place">
+                        st. Pushkinskaya, Kyiv, 02000
+                    </a>
+                    <p class="location__time">Mon - Sun, 09:00 - 20:00</p>
+                </div>
+            </div>
+            <div class="contact">
+                <h3 class="contact__title">Contact</h3>
+                <div class="contact__info">
+                    <p class="contact__text">
+                        <span class="contact__text--special">Email:</span>
+                        ohmycake@gmail.com
+                    </p>
+                    <p class="contact__text">
+                        <span class="contact__text--special">Phone:</span>
+                        +38 (097) 111 22 33
+                    </p>
+                </div>
+            </div>
+            <div class="subscribe">
+                <h3 class="subscribe__title">Stay in the loop!</h3>
+                <form action="mailto:ohmycake@gmail.com" class="subscribe__form">
+                    <input class="subscribe__subject" name="subject" value="I&nbsp;want&nbsp;to&nbsp;subscribe." hidden>
+                    <input class="subscribe__body" name="body" value="Hey&nbsp;Oh&nbsp;My&nbsp;Cake,&nbsp;I'd&nbsp;want&nbsp;to&nbsp;become&nbsp;a&nbsp;subscriber&nbsp;in&nbsp;order&nbsp;to&nbsp;receive&nbsp;any&nbsp;notifications&nbsp;of&nbsp;yours." hidden>
+                    <p class="subscribe__warn">By pressing the button you agree to receive our notifications.</p>
+                    <button class="subscribe__submit" type="submit">Subscribe</button>
+                </form>
+            </div>
         </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js" integrity="sha512-U9dKDqsXAE11UA9kZ0XKFyZ2gQCj+3AwZdBMni7yXSvWqLFEj8C1s7wRmWl9iyij8d5zb4wm56j4z/JVEwS77g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

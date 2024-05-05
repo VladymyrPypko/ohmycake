@@ -1,0 +1,21 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+// * {
+//     border: 2px solid blue;
+// }
+
+.main-about {
+    background-image: url(../src/images/homepage/BackgroundLight.png);
+    padding-top: 12%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: $color-primary;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
