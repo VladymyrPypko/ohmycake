@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OMC | Menu</title>
     <link rel="icon" href="../src/images/logo/no-text-16x16.png">
+    <!-- boxicons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js" integrity="sha512-U9dKDqsXAE11UA9kZ0XKFyZ2gQCj+3AwZdBMni7yXSvWqLFEj8C1s7wRmWl9iyij8d5zb4wm56j4z/JVEwS77g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- local css/js -->
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/menu.js" defer></script>
 </head>
 <body>
     <div class="wrapper">
@@ -38,17 +45,80 @@
                     <img class="navbar__image" src="../src/images/logo/text-100x100.png" alt="logo">
                 </a>
             </nav>
-            <h2>Header - пишем стили в css/menu/_header-menu.scss</h2>
         </header>
-
         <main class="main-menu">
-            <h2>Main - пишем стили в css/menu/_main-menu.scss</h2>
+            <div class="container-xl">
+                <div class="cart">
+                    <a href="#" data-target="#cartModal" class="cart__open bx bxs-cart"></a>
+                    <span class="cart__counter"></span>
+                    <div id="cartModal" class="cart__modal modal">
+                        <div class="modal__dialog" data-action="modal-close">
+                            <div class="modal__content">
+                                <div class="modal__header">
+                                    <h3 class="modal__title">cart</h3>
+                                    <span data-action="modal-close" class="modal__close"></span>
+                                </div>
+                                <div class="modal__body">
+                                    <ul class="cart__list"></ul>
+                                </div>
+                                <div class="modal__footer">
+                                    <span class="cart__total-price">0</span>
+                                    <button class="cart__order">order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-wrap">
+                    <div id="cakeDescriptionModal" class="modal">
+                        <div class="modal__dialog" data-action="modal-close">
+                            <div class="modal__content">
+                                <div class="modal__header">
+                                    <h3 class="modal__title"></h3>
+                                    <span data-action="modal-close" class="modal__close"></span>
+                                </div>
+                                <div class="modal__body">
+                                </div>
+                                <div class="modal__footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="menu"></ul>
+                </div>
+            </div>
         </main>
-        
         <footer class="footer">
-            <h2>
-                Footer - он будет общим для всех страниц, поэтому тут ничего делать не надо.
-            </h2>
+            <div class="location">
+                <h3 class="location__title">Location</h3>
+                <div class="location__info">
+                    <a href="https://maps.app.goo.gl/t1Ky6XBPUGSfuJfj9" target="_blank" class="location__place">
+                        st. Pushkinskaya, Kyiv, 02000
+                    </a>
+                    <p class="location__time">Mon - Sun, 09:00 - 20:00</p>
+                </div>
+            </div>
+            <div class="contact">
+                <h3 class="contact__title">Contact</h3>
+                <div class="contact__info">
+                    <p class="contact__text">
+                        <span class="contact__text--special">Email:</span>
+                        ohmycake@gmail.com
+                    </p>
+                    <p class="contact__text">
+                        <span class="contact__text--special">Phone:</span>
+                        +38 (097) 111 22 33
+                    </p>
+                </div>
+            </div>
+            <div class="subscribe">
+                <h3 class="subscribe__title">Stay in the loop!</h3>
+                <form action="mailto:ohmycake@gmail.com" class="subscribe__form">
+                    <input class="subscribe__subject" name="subject" value="I&nbsp;want&nbsp;to&nbsp;subscribe." hidden="">
+                    <input class="subscribe__body" name="body" value="Hey&nbsp;Oh&nbsp;My&nbsp;Cake,&nbsp;I'd&nbsp;want&nbsp;to&nbsp;become&nbsp;a&nbsp;subscriber&nbsp;in&nbsp;order&nbsp;to&nbsp;receive&nbsp;any&nbsp;notifications&nbsp;of&nbsp;yours." hidden="">
+                    <p class="subscribe__warn">By pressing the button you agree to receive our notifications.</p>
+                    <button class="subscribe__submit" type="submit">Subscribe</button>
+                </form>
+            </div>
         </footer>
     </div>
 </body>

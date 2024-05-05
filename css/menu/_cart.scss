@@ -1,0 +1,78 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.cart {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  top: 80px;
+  left: -80px;
+  width: 70px;
+  height: 50px;
+  border-radius: 0 30px 30px 0;
+  padding: 0 15px 0 20px;
+  background-color: $color-secondary;
+  transition: left, right 0.18s linear;
+
+  @include md {
+    left: unset;
+    right: -80px;
+    border-radius: 30px 0 0 30px;
+  }
+
+  &--shown {
+    left: 0;
+
+    @include md {
+      left: unset;
+      right: 0;
+    }
+  }
+
+  &__open {
+    color: $color-font-primary;
+    font-size: 2rem;
+  }
+
+  &__counter {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 20px;
+    height: 20px;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    font-size: .6rem;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+
+    @include md {
+      right: unset;
+      left: 0;
+    }
+  }
+
+  &__total-price {
+    font-weight: bold;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: '\20B4';
+      right: -12px;
+    }
+  }
+
+  &__order {
+    border-radius: 5px;
+    padding: 10px;
+    text-transform: uppercase;
+    color: $color-primary;
+    background-color: $color-font-secondary;
+  }
+}

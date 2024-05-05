@@ -1,0 +1,97 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  &--show {
+    display: block;
+  }
+
+  &__dialog {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-height: 70%;
+    border-radius: 5px;
+    background-color: $color-secondary;
+
+    @include md {
+      width: 60%;
+    }
+    @include lg {
+      width: 50%;
+    }
+  }
+
+  &__header {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $color-font-secondary;
+    padding: 15px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__close {
+    position: relative;
+    width: 15px;
+    height: 15px;
+  }
+
+  &__close:before,
+  &__close:after {
+    cursor: pointer;
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    background-color: $color-font-primary;
+  }
+
+  &__close:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &__close:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &__body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 25px;
+    border-top: 1px solid $color-font-secondary;
+    padding: 15px;
+  }
+}
