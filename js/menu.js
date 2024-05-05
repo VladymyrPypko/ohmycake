@@ -114,10 +114,11 @@ fetch('../src/json/database.json')
 
                 descriptionModal.querySelector('.modal__title').textContent = cakeData.name;
                 descriptionModal.querySelector('.modal__body').textContent = cakeData.description;
+                document.body.style.overflow = 'hidden';
                 descriptionModal.classList.add('modal--show');
             } else if (klassList.contains('cake__add-to-cart')) {
-
-                klassList.toggle('cake__add-to-cart--added') ? addToCart(cakeData.id, cakeData) : removeFromCart(cakeData.id);
+                klassList.toggle('cake__add-to-cart--added') ?
+                    addToCart(cakeData.id, cakeData) : removeFromCart(cakeData.id);
                 toggleCartOpenLink();
             }
         });
@@ -141,14 +142,17 @@ document.querySelectorAll('.modal').forEach(modal => {
     modal.addEventListener('click', (e) => {
         if (e.target.dataset.action !== 'modal-close') return;
 
+        document.body.style.overflow = 'revert';
         e.currentTarget.classList.remove('modal--show');
     });
 });
+
 
 // cart-modal open
 document.querySelector('a[data-target="#cartModal"]').addEventListener('click', (e) => {
     e.preventDefault();
 
+    document.body.style.overflow = 'hidden';
     document.querySelector(e.target.dataset.target).classList.add('modal--show');
 });
 

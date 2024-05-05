@@ -18,13 +18,13 @@
 
 html {
     font-size: $font-size;
-    overflow-y: scroll;
 }
 
 body {
     font-family: $font-family-main;
     font-size: 1rem;
     color: $color-font-primary;
+    overflow-y: scroll;
 }
 
 ul, ol {

@@ -12,7 +12,6 @@
   @include md {
     font-size: 1.25rem;
   }
-
   @include lg {
     font-size: 1rem;
   }
@@ -78,15 +77,12 @@
     border-radius: 5px;
     padding: 7px;
     color: $color-font-primary;
+    font-size: 1.5rem;
 
     &:hover {
       cursor: pointer;
       background-color: $color-font-secondary;
       color: $color-main;
-    }
-
-    @include xl {
-      font-size: 1.5rem;
     }
   }
 

@@ -14,7 +14,7 @@
   border-radius: 0 30px 30px 0;
   padding: 0 15px 0 20px;
   background-color: $color-secondary;
-  transition: left 0.18s linear;
+  transition: left, right 0.18s linear;
 
   @include md {
     left: unset;
