@@ -1,0 +1,44 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.leadership {
+    background-color: $color-dark-secondary;
+    &__title {
+        font-size: 35px;
+        margin: 20px 0 20px 0;
+        font-family: $color-primary;
+        color: $color-primary;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 0 20px 0;
+    }
+
+    &__image {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    &__name {
+        text-align: center;
+        color: $color-primary;
+    }
+
+    &__position {
+        text-align: center;
+        color: $color-main;
+    }
+
+    @include lg {
+        &__info {
+            flex-direction: row;
+        }
+    }
+}
