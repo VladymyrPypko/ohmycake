@@ -1,0 +1,48 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.partnership {
+    &__title {
+        font-family: $font-family-reviews;
+        font-size: 35px;
+        margin: 20px 0 20px 0;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    &__text {
+        text-align: center;
+        margin: 0 2% 10px 2%;
+        font-size: 18px;
+    }
+
+    &__logos {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 10px;
+    }
+    &__image {
+        width: 40%;
+        padding: 10px;
+    }
+
+    
+    @include sm {
+        &__image {
+            width: 20%;
+        }
+    }
+
+    @include xl {
+        &__title {
+            font-size: 45px;
+        }
+
+        &__text {
+            margin: 0 20% 40px 20%;
+        }
+    }
+}

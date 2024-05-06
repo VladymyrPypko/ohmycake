@@ -1,0 +1,62 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+
+.welcom {
+
+    &__title {
+        font-family: $font-family-secondary;
+        font-size: 30px;
+        color: $color-font-primary;
+        margin: 0 0 20px 0;
+        text-align: center;
+    }
+
+    &__text {
+        text-align: center;
+        font-size: 16px;
+        margin: 0 2% 30px 2%;
+    }
+
+    
+    @include sm {
+        &__title {
+            font-size: 33px;
+        }
+
+        &__text {
+            font-size: 19px;
+            margin: 0 2% 40px 2%;
+        }
+
+    }
+
+    @include md {
+        &__title {
+            font-size: 35px;
+        }
+
+        &__text {
+            font-size: 20px;
+        }
+    }
+
+    @include lg {
+        &__title {
+            font-size: 40px;
+        }
+
+        &__text {
+            font-size: 18px;
+            margin: 0 7% 40px 7%;
+        }
+
+    }
+
+    @include xl {
+        &__text {
+            font-size: 20px;
+            margin: 0 20% 40px 20%;
+        }
+    }
+}
